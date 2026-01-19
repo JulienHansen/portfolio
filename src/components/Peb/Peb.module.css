@@ -1,0 +1,162 @@
+.peb {
+  padding: var(--spacing-xl) 0;
+  background: var(--white);
+}
+
+.header {
+  max-width: 700px;
+  margin-bottom: var(--spacing-xl);
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gray);
+  margin-bottom: var(--spacing-sm);
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--spacing-md);
+}
+
+.intro {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--gray-dark);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gray);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.servicesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.serviceCard {
+  padding: var(--spacing-md);
+  background: var(--cream);
+  border-left: 2px solid var(--black);
+  transition: transform var(--transition);
+}
+
+.serviceCard:hover {
+  transform: translateX(4px);
+}
+
+.serviceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  gap: var(--spacing-sm);
+}
+
+.serviceTitle {
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.servicePrice {
+  font-size: 0.875rem;
+  color: var(--black);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.serviceDescription {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.competencesList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.competenceItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  color: var(--gray-dark);
+}
+
+.checkmark {
+  font-size: 0.875rem;
+  color: var(--black);
+  font-weight: 600;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--cream);
+  text-align: center;
+}
+
+.cta p {
+  font-size: 1.125rem;
+  color: var(--gray-dark);
+}
+
+.ctaButton {
+  padding: 14px 32px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all var(--transition);
+}
+
+.ctaButton:hover {
+  background: var(--gray-dark);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceHeader {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .cta {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+}
