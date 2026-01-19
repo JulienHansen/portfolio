@@ -2,7 +2,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import styles from './Hero.module.css'
 import logo from '../../assets/logo.png'
-import heroImage from '../../assets/page_acceuil.jpeg'
 
 const Hero = ({ onIntroComplete, skipIntro }) => {
   const [phase, setPhase] = useState(skipIntro ? 'complete' : 'intro') // 'intro' | 'moving' | 'complete'
@@ -110,11 +109,19 @@ const Hero = ({ onIntroComplete, skipIntro }) => {
         animate={{ opacity: phase === 'complete' ? 1 : 0 }}
         transition={{ duration: 1 }}
       >
-        <img
-          src={heroImage}
-          alt="Architecture moderne"
+        <video
           className={styles.video}
-        />
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+        >
+          <source
+            src="https://assets.mixkit.co/videos/preview/mixkit-modern-building-background-shot-4240-large.mp4"
+            type="video/mp4"
+          />
+        </video>
         <div className={styles.videoOverlay} />
       </motion.div>
 
