@@ -236,12 +236,14 @@
   }
 
   .projectNav {
-    flex-direction: column;
+    padding: var(--spacing-md);
   }
 
-  .navLinkNext {
-    text-align: left;
-    border-left: none;
-    border-top: 1px solid var(--cream-dark);
+  .navLabel {
+    font-size: 0.6rem;
+  }
+
+  .navTitle {
+    font-size: 0.85rem;
   }
 }
