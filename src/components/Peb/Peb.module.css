@@ -5,7 +5,7 @@
 
 .header {
   max-width: 700px;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
 }
 
 .label {
@@ -28,6 +28,7 @@
   font-size: 1.1rem;
   line-height: 1.7;
   color: var(--gray-dark);
+  text-align: justify;
 }
 
 .grid {
@@ -91,6 +92,13 @@
   line-height: 1.6;
 }
 
+.priceNote {
+  font-size: 0.75rem;
+  color: var(--gray);
+  margin-top: var(--spacing-sm);
+  font-style: italic;
+}
+
 .competencesList {
   display: flex;
   flex-direction: column;
@@ -109,6 +117,56 @@
   font-size: 0.875rem;
   color: var(--black);
   font-weight: 600;
+}
+
+.gridSecondary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.etapesList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+
+.etapeItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  color: var(--gray-dark);
+}
+
+.etapeNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--white);
+  background-color: var(--gray);
+  border-radius: 50%;
+}
+
+.documentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.documentItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  color: var(--gray-dark);
 }
 
 .cta {
@@ -134,6 +192,8 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   transition: all var(--transition);
+  border: none;
+  cursor: pointer;
 }
 
 .ctaButton:hover {
@@ -144,6 +204,11 @@
 /* Responsive */
 @media (max-width: 968px) {
   .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .gridSecondary {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
   }

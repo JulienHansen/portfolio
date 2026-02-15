@@ -63,6 +63,7 @@
   font-size: 1rem;
   line-height: 1.7;
   color: var(--gray-dark);
+  text-align: justify;
 }
 
 /* Responsive */

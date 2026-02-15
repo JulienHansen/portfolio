@@ -28,6 +28,20 @@ const Navbar = ({ visible = true }) => {
     }
   }
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault()
+    const sectionId = href.replace('#', '')
+
+    if (location.pathname === '/') {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate('/')
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    }
+  }
+
   const navItems = [
     { label: 'Projets', href: '#projects' },
     { label: 'PEB', href: '#peb' },
@@ -45,13 +59,18 @@ const Navbar = ({ visible = true }) => {
       <div className={`container ${styles.navContainer}`}>
         <Link to="/" className={styles.logo} onClick={handleLogoClick}>
           <img src={logo} alt="Quarto Architecture" className={styles.logoImg} />
+          <span className={styles.logoSeparator}></span>
           <span className={styles.logoText}>Quarto <span>Architecture</span></span>
         </Link>
 
         <ul className={styles.navLinks}>
           {navItems.map((item) => (
             <li key={item.label}>
-              <a href={item.href} className={styles.navLink}>
+              <a
+                href={item.href}
+                className={styles.navLink}
+                onClick={(e) => handleNavClick(e, item.href)}
+              >
                 {item.label}
               </a>
             </li>
@@ -78,7 +97,10 @@ const Navbar = ({ visible = true }) => {
               >
                 <a
                   href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    handleNavClick(e, item.href)
+                    setIsMobileMenuOpen(false)
+                  }}
                 >
                   {item.label}
                 </a>

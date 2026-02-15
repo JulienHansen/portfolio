@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './Contact.module.css'
 
 const Contact = () => {
@@ -7,22 +7,116 @@ const Contact = () => {
     firstName: '',
     lastName: '',
     email: '',
+    subject: '',
     message: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
+  const [isPrefilled, setIsPrefilled] = useState(false)
+
+  const subjectOptions = [
+    { value: '', label: 'Sélectionnez un objet' },
+    { value: 'Projet de construction', label: 'Projet de construction' },
+    { value: 'Projet de rénovation', label: 'Projet de rénovation' },
+    { value: 'Projet de transformation', label: 'Projet de transformation' },
+    { value: 'Régularisation', label: 'Régularisation' },
+    { value: 'Certification PEB', label: 'Certification PEB' },
+    { value: 'Autres', label: 'Autres' }
+  ]
+
+  useEffect(() => {
+    const handlePrefillMessage = (e) => {
+      setFormData(prev => ({
+        ...prev,
+        message: e.detail.message,
+        subject: e.detail.subject || prev.subject
+      }))
+      setIsPrefilled(true)
+    }
+
+    window.addEventListener('prefillContactForm', handlePrefillMessage)
+    return () => window.removeEventListener('prefillContactForm', handlePrefillMessage)
+  }, [])
+
+  const pebMessage = `Bonjour,
+
+Je souhaite obtenir un devis pour un certificat PEB.
+
+Type de bien :
+Adresse du bien :
+Surface approximative :
+
+Cordialement,`
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
+    const { name, value } = e.target
+
+    if (name === 'subject') {
+      // Si l'utilisateur sélectionne "Certification PEB", on pré-remplit le message
+      if (value === 'Certification PEB') {
+        setFormData({
+          ...formData,
+          subject: value,
+          message: pebMessage
+        })
+        setIsPrefilled(true)
+      } else if (isPrefilled) {
+        // Si l'objet change et que le message était pré-rempli, on efface le message
+        setFormData({
+          ...formData,
+          subject: value,
+          message: ''
+        })
+        setIsPrefilled(false)
+      } else {
+        setFormData({
+          ...formData,
+          subject: value
+        })
+      }
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value
+      })
+    }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Ici vous pouvez ajouter la logique d'envoi du formulaire
-    console.log('Form submitted:', formData)
-    alert('Message envoyé ! Nous vous recontacterons rapidement.')
-    setFormData({ firstName: '', lastName: '', email: '', message: '' })
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    // Remplacez YOUR_FORM_ID par votre ID Formspree
+    // Créez un compte gratuit sur https://formspree.io et créez un formulaire
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _subject: `[Quarto Architecture] ${formData.subject}`
+        })
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' })
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      setSubmitStatus('error')
+    }
+
+    setIsSubmitting(false)
   }
 
   return (
@@ -39,18 +133,30 @@ const Contact = () => {
             <span className={styles.label}>Contact</span>
             <h2 className={styles.title}>Discutons de votre projet</h2>
             <p className={styles.description}>
-              Vous avez un projet de construction, de rénovation ou besoin d'une certification PEB ?
+              Vous avez un projet de construction, de rénovation/transformation, de régularisation ou besoin d'une certification PEB ?
+              <br />
               Contactez-moi pour en discuter.
             </p>
 
             <div className={styles.info}>
               <div className={styles.infoItem}>
                 <span className={styles.infoLabel}>Email</span>
-                <span>contact@quarto-architecture.be</span>
+                <a href="mailto:contact@quarto-architecture.be" className={styles.infoLink}>
+                  contact@quarto-architecture.be
+                </a>
               </div>
               <div className={styles.infoItem}>
                 <span className={styles.infoLabel}>Adresse</span>
-                <span>Rue de Loncin, Liège</span>
+                <a
+                  href="#map"
+                  className={styles.infoLink}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    document.getElementById('map')?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                >
+                  Rue de Loncin 58, 4460 Grâce-Hollogne
+                </a>
               </div>
             </div>
           </motion.div>
@@ -107,6 +213,24 @@ const Contact = () => {
             </div>
 
             <div className={styles.field}>
+              <label htmlFor="subject" className={styles.fieldLabel}>Objet</label>
+              <select
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+                className={`${styles.select} ${formData.subject === '' ? styles.selectPlaceholder : ''}`}
+              >
+                {subjectOptions.map((option) => (
+                  <option key={option.value} value={option.value} disabled={option.value === ''}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className={styles.field}>
               <label htmlFor="message" className={styles.fieldLabel}>Message</label>
               <textarea
                 id="message"
@@ -120,8 +244,20 @@ const Contact = () => {
               />
             </div>
 
-            <button type="submit" className={styles.submitButton}>
-              Envoyer le message
+            {submitStatus === 'success' && (
+              <p className={styles.successMessage}>
+                Message envoyé avec succès ! Je vous recontacterai rapidement.
+              </p>
+            )}
+
+            {submitStatus === 'error' && (
+              <p className={styles.errorMessage}>
+                Une erreur est survenue. Veuillez réessayer ou me contacter directement par email.
+              </p>
+            )}
+
+            <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
+              {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
             </button>
           </motion.form>
         </div>

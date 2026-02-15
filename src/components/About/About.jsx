@@ -30,20 +30,17 @@ const About = () => {
           >
             <span className={styles.label}>À propos</span>
             <h2 className={styles.title}>Kassandra Quarto</h2>
-            <p className={styles.subtitle}>Ingénieur Architecte</p>
+            <p className={styles.subtitle}>Ingénieure Civile Architecte</p>
 
             <div className={styles.bio}>
               <p>
-                Passionnée par l'architecture depuis toujours, je conçois des espaces
-                qui allient esthétique, fonctionnalité et respect de l'environnement.
+                Mon approche de l'architecture est autant technique que sensible. J'accorde autant d'importance à la structure, aux détails constructifs et à la durabilité qu'à l'ambiance et à l'usage quotidien des espaces.
               </p>
               <p>
-                Chaque projet est une nouvelle opportunité de créer un lieu de vie
-                unique, pensé pour ses habitants et en harmonie avec son contexte.
+                J'aime comprendre comment un bâtiment fonctionne réellement. Je m'implique dans les projets de la conception jusqu'au chantier, en cherchant des solutions concrètes, cohérentes et réalisables, adaptées au budget et au contexte existant.
               </p>
               <p>
-                Basée à Bruxelles, j'accompagne mes clients de la conception
-                à la réalisation de leurs projets résidentiels et commerciaux.
+                J'interviens principalement sur des rénovations et transformations, où chaque situation est différente et demande réflexion plutôt qu'une réponse standardisée. Mon objectif est de proposer des espaces justes, confortables et durables, pensés pour les personnes qui les occupent.
               </p>
             </div>
           </motion.div>

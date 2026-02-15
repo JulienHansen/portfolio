@@ -31,6 +31,13 @@
   width: auto;
 }
 
+.logoSeparator {
+  width: 1px;
+  height: 24px;
+  background-color: var(--black);
+  opacity: 0.3;
+}
+
 .logoText {
   font-size: 1rem;
   font-weight: 500;
