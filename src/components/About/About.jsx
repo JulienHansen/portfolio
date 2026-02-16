@@ -34,13 +34,16 @@ const About = () => {
 
             <div className={styles.bio}>
               <p>
-                Mon approche de l'architecture est autant technique que sensible. J'accorde autant d'importance à la structure, aux détails constructifs et à la durabilité qu'à l'ambiance et à l'usage quotidien des espaces.
+                Mon travail consiste avant tout à comprendre les besoins et le mode de vie de mes clients. Chaque projet est différent : il s'inscrit dans un budget, un bâtiment existant et une réalité quotidienne.
               </p>
               <p>
-                J'aime comprendre comment un bâtiment fonctionne réellement. Je m'implique dans les projets de la conception jusqu'au chantier, en cherchant des solutions concrètes, cohérentes et réalisables, adaptées au budget et au contexte existant.
+                Je privilégie des solutions simples, cohérentes et réalisables, en accordant autant d'attention à la qualité constructive qu'au confort des espaces.
               </p>
               <p>
-                J'interviens principalement sur des rénovations et transformations, où chaque situation est différente et demande réflexion plutôt qu'une réponse standardisée. Mon objectif est de proposer des espaces justes, confortables et durables, pensés pour les personnes qui les occupent.
+                Je m'implique personnellement dans chaque étape : premières esquisses, démarches administratives, élaboration des plans techniques et suivi du chantier. Mon objectif est que le projet se déroule de manière claire et sereine pour le client.
+              </p>
+              <p>
+                Je travaille principalement sur des rénovations et transformations de logements dans la région liégeoise.
               </p>
             </div>
           </motion.div>

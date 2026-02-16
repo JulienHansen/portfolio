@@ -88,6 +88,12 @@ const ProjectDetail = () => {
                   <span className={styles.detailLabel}>Type</span>
                   <span className={styles.detailValue}>{project.category}</span>
                 </div>
+                {project.collaboration && (
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Collaboration</span>
+                    <span className={styles.detailValue}>{project.collaboration}</span>
+                  </div>
+                )}
               </div>
 
               <div className={styles.description}>
@@ -128,6 +134,30 @@ const ProjectDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* Call to Action */}
+      <motion.section
+        className={styles.cta}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <p className={styles.ctaText}>Et si le prochain projet était le vôtre ?</p>
+        <Link
+          to="/#contact"
+          className={styles.ctaButton}
+          onClick={(e) => {
+            e.preventDefault()
+            navigate('/')
+            setTimeout(() => {
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+            }, 100)
+          }}
+        >
+          Prendre contact
+        </Link>
+      </motion.section>
 
       {/* Project Navigation */}
       <nav className={styles.projectNav}>

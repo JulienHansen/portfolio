@@ -7,16 +7,69 @@ import logo from '../../assets/logo.png'
 const Navbar = ({ visible = true }) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
   const location = useLocation()
   const navigate = useNavigate()
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
+
+      // Réinitialiser la section active si on est en haut (Hero)
+      const projectsSection = document.getElementById('projects')
+      if (projectsSection) {
+        const rect = projectsSection.getBoundingClientRect()
+        if (rect.top > window.innerHeight * 0.4) {
+          setActiveSection('')
+        }
+      }
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    // Si on est sur une page projet, activer "projects"
+    if (location.pathname.startsWith('/projet/')) {
+      setActiveSection('projects')
+      return
+    }
+
+    if (location.pathname !== '/') return
+
+    const sections = ['projects', 'peb', 'about', 'contact']
+
+    const observerOptions = {
+      rootMargin: '-30% 0px -50% 0px',
+      threshold: 0
+    }
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id)
+        }
+      })
+
+      // Vérifier si on est remonté au-dessus de toutes les sections
+      const projectsSection = document.getElementById('projects')
+      if (projectsSection) {
+        const rect = projectsSection.getBoundingClientRect()
+        if (rect.top > window.innerHeight * 0.5) {
+          setActiveSection('')
+        }
+      }
+    }
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions)
+
+    sections.forEach((sectionId) => {
+      const element = document.getElementById(sectionId)
+      if (element) observer.observe(element)
+    })
+
+    return () => observer.disconnect()
+  }, [location.pathname])
 
   const handleLogoClick = (e) => {
     if (location.pathname === '/') {
@@ -46,7 +99,7 @@ const Navbar = ({ visible = true }) => {
     { label: 'Projets', href: '#projects' },
     { label: 'PEB', href: '#peb' },
     { label: 'À propos', href: '#about' },
-    { label: 'Contact', href: '#contact' }
+    { label: 'Prendre contact', href: '#contact' }
   ]
 
   return (
@@ -68,7 +121,7 @@ const Navbar = ({ visible = true }) => {
             <li key={item.label}>
               <a
                 href={item.href}
-                className={styles.navLink}
+                className={`${styles.navLink} ${activeSection === item.href.replace('#', '') ? styles.active : ''}`}
                 onClick={(e) => handleNavClick(e, item.href)}
               >
                 {item.label}
@@ -97,6 +150,7 @@ const Navbar = ({ visible = true }) => {
               >
                 <a
                   href={item.href}
+                  className={activeSection === item.href.replace('#', '') ? styles.mobileActive : ''}
                   onClick={(e) => {
                     handleNavClick(e, item.href)
                     setIsMobileMenuOpen(false)

@@ -164,6 +164,36 @@
   filter: grayscale(0%);
 }
 
+/* Call to Action */
+.cta {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.ctaText {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 400;
+  color: var(--gray-dark);
+  margin-bottom: var(--spacing-md);
+  font-style: italic;
+}
+
+.ctaButton {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--black);
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--black);
+  transition: all var(--transition);
+}
+
+.ctaButton:hover {
+  color: var(--gray);
+  border-color: var(--gray);
+}
+
 /* Project Navigation */
 .projectNav {
   display: flex;

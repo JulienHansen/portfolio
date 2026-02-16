@@ -8,6 +8,7 @@ import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import ProjectDetail from './components/ProjectDetail/ProjectDetail'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 function HomePage({ onIntroComplete, showNavbar, skipIntro }) {
   return (
@@ -21,6 +22,7 @@ function HomePage({ onIntroComplete, showNavbar, skipIntro }) {
         <Contact />
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   )
 }
@@ -33,6 +35,7 @@ function ProjectPage() {
         <ProjectDetail />
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   )
 }

@@ -78,6 +78,10 @@
   width: 100%;
 }
 
+.navLink.active::after {
+  width: 100%;
+}
+
 .mobileMenuBtn {
   display: none;
   flex-direction: column;
@@ -134,6 +138,12 @@
   font-weight: 300;
   letter-spacing: -0.02em;
   color: var(--black);
+  transition: color var(--transition);
+}
+
+.mobileMenu a.mobileActive {
+  text-decoration: underline;
+  text-underline-offset: 8px;
 }
 
 @media (max-width: 768px) {

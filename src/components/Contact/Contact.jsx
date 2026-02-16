@@ -26,12 +26,17 @@ const Contact = () => {
 
   useEffect(() => {
     const handlePrefillMessage = (e) => {
+      const newSubject = e.detail.subject || ''
+      const newMessage = e.detail.message || ''
+
       setFormData(prev => ({
         ...prev,
-        message: e.detail.message,
-        subject: e.detail.subject || prev.subject
+        subject: newSubject || prev.subject,
+        message: newMessage || prev.message
       }))
-      setIsPrefilled(true)
+      if (newSubject || newMessage) {
+        setIsPrefilled(true)
+      }
     }
 
     window.addEventListener('prefillContactForm', handlePrefillMessage)
@@ -130,19 +135,26 @@ Cordialement,`
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className={styles.label}>Contact</span>
+            <span className={styles.label}>Prendre contact</span>
             <h2 className={styles.title}>Discutons de votre projet</h2>
             <p className={styles.description}>
               Vous avez un projet de construction, de rénovation/transformation, de régularisation ou besoin d'une certification PEB ?
               <br />
               Contactez-moi pour en discuter.
             </p>
+            <p className={styles.noEngagement}>Premier contact sans engagement</p>
 
             <div className={styles.info}>
               <div className={styles.infoItem}>
                 <span className={styles.infoLabel}>Email</span>
                 <a href="mailto:contact@quarto-architecture.be" className={styles.infoLink}>
                   contact@quarto-architecture.be
+                </a>
+              </div>
+              <div className={styles.infoItem}>
+                <span className={styles.infoLabel}>Téléphone</span>
+                <a href="tel:+32499337403" className={styles.infoLink}>
+                  +32 499 33 74 03
                 </a>
               </div>
               <div className={styles.infoItem}>
