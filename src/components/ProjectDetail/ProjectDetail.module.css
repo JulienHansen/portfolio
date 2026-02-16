@@ -243,17 +243,6 @@
   .infoColumn {
     position: static;
   }
-
-  .details {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: var(--spacing-md);
-  }
-
-  .detailItem {
-    flex-direction: column;
-    gap: 2px;
-  }
 }
 
 @media (max-width: 768px) {
