@@ -14,15 +14,6 @@ const Navbar = ({ visible = true }) => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
-
-      // Réinitialiser la section active si on est en haut (Hero)
-      const projectsSection = document.getElementById('projects')
-      if (projectsSection) {
-        const rect = projectsSection.getBoundingClientRect()
-        if (rect.top > window.innerHeight * 0.4) {
-          setActiveSection('')
-        }
-      }
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
