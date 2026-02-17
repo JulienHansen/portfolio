@@ -1,3 +1,8 @@
+import strataverde1 from '../assets/strataverde/1.jpeg'
+import strataverde2 from '../assets/strataverde/2.png'
+import strataverde3 from '../assets/strataverde/3.png'
+import strataverde4 from '../assets/strataverde/4.png'
+
 export const projects = [
   {
     id: 1,
@@ -23,25 +28,25 @@ export const projects = [
   },
   {
     id: 2,
-    slug: "loft-industriel",
-    title: "Loft Industriel",
-    location: "Anvers, Belgique",
-    year: "2024",
-    category: "Rénovation",
-    phase: "En chantier",
-    collaboration: "Thomas Dubois",
-    surface: "220 m²",
-    duration: "12 mois",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
+    slug: "strataverde",
+    title: "Strata Verde",
+    location: "Chênée, Belgique",
+    year: "2025",
+    category: "Étude",
+    phase: "Étude",
+    collaboration: "Eliard Marine - Goffinet Olivier",
+    surface: "50 000 m²",
+    duration: "4 mois",
+    image: strataverde1,
     images: [
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80"
+      strataverde1,
+      strataverde2,
+      strataverde3,
+      strataverde4
     ],
-    description: "Transformation d'un ancien entrepôt industriel en loft moderne tout en préservant le caractère authentique du bâtiment. Les éléments d'origine comme les poutres métalliques et les briques ont été mis en valeur.",
-    challenge: "Intégrer le confort moderne dans un espace industriel brut tout en respectant le patrimoine architectural et les contraintes structurelles existantes.",
-    solution: "Une approche de rénovation douce a permis de conserver les éléments industriels emblématiques tout en créant des zones de vie confortables grâce à des insertions contemporaines en bois et verre."
+    description: "Suite aux inondations de 2021, le projet requalifie Chênée en replaçant l'Ourthe au centre et en créant un corridor écologique structurant.",
+    challenge: "Transformer un quartier marqué par les inondations et dominé par la voiture en un espace résilient et attractif. Il fallait reconnecter Chênée à l'Ourthe tout en renforçant sa dynamique sociale et urbaine.",
+    solution: "Le projet intègre un hall sportif, un restaurant-coworking avec logements et des kots étudiants pour créer une centralité active. Une promenade paysagère structure le site et favorise la continuité écologique. Strata Verde façonne ainsi un quartier plus vert, fluide et vivant."
   },
   {
     id: 3,

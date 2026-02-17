@@ -160,8 +160,16 @@
   transition: filter 0.5s ease;
 }
 
+.imageHighContrast {
+  filter: grayscale(100%) contrast(1.18);
+}
+
 .imageWrapper:hover .image {
   filter: grayscale(0%);
+}
+
+.imageWrapper:hover .imageHighContrast {
+  filter: grayscale(0%) contrast(1.18);
 }
 
 /* Call to Action */
