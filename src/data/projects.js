@@ -29,7 +29,7 @@ export const projects = [
   {
     id: 2,
     slug: "strataverde",
-    title: "Strata Verde",
+    title: "StrataVerde",
     location: "Chênée, Belgique",
     year: "2025",
     category: "Étude",
