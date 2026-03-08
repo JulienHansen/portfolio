@@ -81,7 +81,7 @@ export const projects = [
     id: 4,
     slug: "Shiva",
     title: "Shiva",
-    location: "Halles aux locomotives de Seraing, Belgique",
+    location: "Seraing, Belgique",
     year: "2024",
     category: "Étude",
     phase: "Étude",
