@@ -97,6 +97,7 @@ export const projects = [
       shiva5,
       shiva7
     ],
+    blendImages: [2, 5],
     description: "Projet de réhabilitation d'une ancienne halle aux locomotives transformant un ancien site industriel en pôle culturel et social. Le projet relie patrimoine et modernité en intégrant un cinéma, des studios, un restaurant et des espaces publics autour d'un parcours de mobilité douce.",
     challenge: "Comment préserver l'identité industrielle du site tout en lui donnant une nouvelle vie active et attractive pour le quartier.",
     solution: "Le projet conserve les façades industrielles comme mémoire du lieu tout en restructurant l'intérieur pour accueillir de nouveaux programmes culturels et sociaux. L'organisation autour d'un restaurant central, d'un cinéma, de studios et d'espaces extérieurs animés crée un lieu ouvert, dynamique et connecté au quartier."

@@ -164,6 +164,10 @@
   filter: grayscale(100%) contrast(1.18);
 }
 
+.imageBlend {
+  mix-blend-mode: multiply;
+}
+
 .imageWrapper:hover .image {
   filter: grayscale(0%);
 }
