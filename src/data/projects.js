@@ -1,3 +1,10 @@
+import shiva1 from '../assets/Shiva/1.jpeg'
+import shiva2 from '../assets/Shiva/2.jpeg'
+import shiva3 from '../assets/Shiva/3.jpg'
+import shiva4 from '../assets/Shiva/4.jpeg'
+import shiva5 from '../assets/Shiva/5.jpeg'
+import shiva7 from '../assets/Shiva/7.jpg'
+
 import strataverde1 from '../assets/strataverde/1.jpeg'
 import strataverde2 from '../assets/strataverde/2.png'
 import strataverde3 from '../assets/strataverde/3.png'
@@ -72,25 +79,27 @@ export const projects = [
   },
   {
     id: 4,
-    slug: "espace-bureau",
-    title: "Espace Bureau",
-    location: "Gand, Belgique",
-    year: "2023",
-    category: "Commercial",
-    phase: "Réalisé",
-    collaboration: "Theo Van den Berg",
-    surface: "800 m²",
+    slug: "Shiva",
+    title: "Shiva",
+    location: "Halles aux locomotives de Seraing, Belgique",
+    year: "2024",
+    category: "Étude",
+    phase: "Étude",
+    collaboration: "Eliard Marine - Goffinet Olivier",
+    surface: "11 627 m²",
     duration: "10 mois",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
+    image: shiva1,
     images: [
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80",
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1200&q=80",
-      "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=1200&q=80"
+      shiva1,
+      shiva2,
+      shiva3,
+      shiva4,
+      shiva5,
+      shiva7
     ],
-    description: "Aménagement d'un espace de travail flexible et inspirant pour une entreprise tech. Le design favorise la collaboration tout en offrant des zones de concentration individuelle.",
-    challenge: "Concevoir un environnement de travail qui réponde aux besoins variés d'une équipe créative : collaboration, concentration, détente et réunions clients.",
-    solution: "Un zonage fluide avec des espaces modulables, une acoustique soignée et une variété d'ambiances permettent aux employés de choisir l'environnement adapté à chaque tâche."
+    description: "Projet de réhabilitation d'une ancienne halle aux locomotives transformant un ancien site industriel en pôle culturel et social. Le projet relie patrimoine et modernité en intégrant un cinéma, des studios, un restaurant et des espaces publics autour d'un parcours de mobilité douce.",
+    challenge: "Comment préserver l'identité industrielle du site tout en lui donnant une nouvelle vie active et attractive pour le quartier.",
+    solution: "Le projet conserve les façades industrielles comme mémoire du lieu tout en restructurant l'intérieur pour accueillir de nouveaux programmes culturels et sociaux. L'organisation autour d'un restaurant central, d'un cinéma, de studios et d'espaces extérieurs animés crée un lieu ouvert, dynamique et connecté au quartier."
   },
   {
     id: 5,
