@@ -9,8 +9,9 @@ import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import ProjectDetail from './components/ProjectDetail/ProjectDetail'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
+import useIsMobile from './hooks/useIsMobile'
 
-function HomePage({ onIntroComplete, showNavbar, skipIntro }) {
+function DesktopHomePage({ onIntroComplete, showNavbar, skipIntro }) {
   return (
     <>
       <Navbar visible={showNavbar} />
@@ -23,6 +24,31 @@ function HomePage({ onIntroComplete, showNavbar, skipIntro }) {
       </main>
       <Footer />
       <ScrollToTop />
+    </>
+  )
+}
+
+function MobilePage({ children }) {
+  return (
+    <>
+      <Navbar visible={true} />
+      <main style={{ paddingTop: 'var(--nav-height)' }}>
+        {children}
+      </main>
+      <Footer />
+      <ScrollToTop />
+    </>
+  )
+}
+
+function MobileHomePage({ onIntroComplete, showNavbar, skipIntro }) {
+  return (
+    <>
+      <Navbar visible={showNavbar} />
+      <main>
+        <Hero onIntroComplete={onIntroComplete} skipIntro={skipIntro} />
+      </main>
+      <Footer />
     </>
   )
 }
@@ -41,6 +67,7 @@ function ProjectPage() {
 }
 
 function App() {
+  const isMobile = useIsMobile()
   const [introSeen, setIntroSeen] = useState(() => {
     return sessionStorage.getItem('introSeen') === 'true'
   })
@@ -53,16 +80,35 @@ function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <HomePage
-              showNavbar={introSeen}
-              onIntroComplete={handleIntroComplete}
-              skipIntro={introSeen}
+        {isMobile ? (
+          <>
+            <Route
+              path="/"
+              element={
+                <MobileHomePage
+                  showNavbar={introSeen}
+                  onIntroComplete={handleIntroComplete}
+                  skipIntro={introSeen}
+                />
+              }
             />
-          }
-        />
+            <Route path="/projects" element={<MobilePage><Projects /></MobilePage>} />
+            <Route path="/peb" element={<MobilePage><Peb /></MobilePage>} />
+            <Route path="/about" element={<MobilePage><About /></MobilePage>} />
+            <Route path="/contact" element={<MobilePage><Contact /></MobilePage>} />
+          </>
+        ) : (
+          <Route
+            path="/"
+            element={
+              <DesktopHomePage
+                showNavbar={introSeen}
+                onIntroComplete={handleIntroComplete}
+                skipIntro={introSeen}
+              />
+            }
+          />
+        )}
         <Route path="/projet/:slug" element={<ProjectPage />} />
       </Routes>
     </BrowserRouter>

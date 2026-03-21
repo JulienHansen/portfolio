@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import styles from './Navbar.module.css'
 import logo from '../../assets/logo.png'
+import useIsMobile from '../../hooks/useIsMobile'
 
 const Navbar = ({ visible = true }) => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -10,6 +11,7 @@ const Navbar = ({ visible = true }) => {
   const [activeSection, setActiveSection] = useState('')
   const location = useLocation()
   const navigate = useNavigate()
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +22,8 @@ const Navbar = ({ visible = true }) => {
   }, [])
 
   useEffect(() => {
+    if (isMobile) return
+
     // Si on est sur une page projet, activer "projects"
     if (location.pathname.startsWith('/projet/')) {
       setActiveSection('projects')
@@ -60,7 +64,7 @@ const Navbar = ({ visible = true }) => {
     })
 
     return () => observer.disconnect()
-  }, [location.pathname])
+  }, [location.pathname, isMobile])
 
   const handleLogoClick = (e) => {
     if (location.pathname === '/') {
@@ -72,10 +76,17 @@ const Navbar = ({ visible = true }) => {
     }
   }
 
-  const handleNavClick = (e, href) => {
+  const handleNavClick = (e, item) => {
     e.preventDefault()
-    const sectionId = href.replace('#', '')
 
+    if (isMobile) {
+      navigate(item.mobileHref)
+      setIsMobileMenuOpen(false)
+      window.scrollTo({ top: 0 })
+      return
+    }
+
+    const sectionId = item.href.replace('#', '')
     if (location.pathname === '/') {
       document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
     } else {
@@ -87,11 +98,14 @@ const Navbar = ({ visible = true }) => {
   }
 
   const navItems = [
-    { label: 'Projets', href: '#projects' },
-    { label: 'PEB', href: '#peb' },
-    { label: 'À propos', href: '#about' },
-    { label: 'Prendre contact', href: '#contact' }
+    { label: 'Projets', href: '#projects', mobileHref: '/projects' },
+    { label: 'PEB', href: '#peb', mobileHref: '/peb' },
+    { label: 'À propos', href: '#about', mobileHref: '/about' },
+    { label: 'Prendre contact', href: '#contact', mobileHref: '/contact' }
   ]
+
+  const isActiveMobile = (item) => location.pathname === item.mobileHref
+  const isActiveDesktop = (item) => activeSection === item.href.replace('#', '')
 
   return (
     <motion.nav
@@ -112,8 +126,8 @@ const Navbar = ({ visible = true }) => {
             <li key={item.label}>
               <a
                 href={item.href}
-                className={`${styles.navLink} ${activeSection === item.href.replace('#', '') ? styles.active : ''}`}
-                onClick={(e) => handleNavClick(e, item.href)}
+                className={`${styles.navLink} ${isActiveDesktop(item) ? styles.active : ''}`}
+                onClick={(e) => handleNavClick(e, item)}
               >
                 {item.label}
               </a>
@@ -132,20 +146,37 @@ const Navbar = ({ visible = true }) => {
 
         <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.open : ''}`}>
           <ul>
+            {location.pathname !== '/' && (
+              <motion.li
+                initial={{ opacity: 0, y: 20 }}
+                animate={isMobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ delay: 0 }}
+              >
+                <a
+                  href="/"
+                  className={location.pathname === '/' ? styles.mobileActive : ''}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    navigate('/')
+                    setIsMobileMenuOpen(false)
+                    window.scrollTo({ top: 0 })
+                  }}
+                >
+                  Accueil
+                </a>
+              </motion.li>
+            )}
             {navItems.map((item, index) => (
               <motion.li
                 key={item.label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isMobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: (location.pathname !== '/' ? index + 1 : index) * 0.1 }}
               >
                 <a
-                  href={item.href}
-                  className={activeSection === item.href.replace('#', '') ? styles.mobileActive : ''}
-                  onClick={(e) => {
-                    handleNavClick(e, item.href)
-                    setIsMobileMenuOpen(false)
-                  }}
+                  href={isMobile ? item.mobileHref : item.href}
+                  className={isActiveMobile(item) ? styles.mobileActive : ''}
+                  onClick={(e) => handleNavClick(e, item)}
                 >
                   {item.label}
                 </a>

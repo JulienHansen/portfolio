@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import styles from './Contact.module.css'
 
 const Contact = () => {
@@ -10,6 +11,7 @@ const Contact = () => {
     subject: '',
     message: ''
   })
+  const [searchParams] = useSearchParams()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null)
   const [isPrefilled, setIsPrefilled] = useState(false)
@@ -42,6 +44,19 @@ const Contact = () => {
     window.addEventListener('prefillContactForm', handlePrefillMessage)
     return () => window.removeEventListener('prefillContactForm', handlePrefillMessage)
   }, [])
+
+  useEffect(() => {
+    const subject = searchParams.get('subject')
+    const message = searchParams.get('message')
+    if (subject || message) {
+      setFormData(prev => ({
+        ...prev,
+        subject: subject || prev.subject,
+        message: message || prev.message
+      }))
+      setIsPrefilled(true)
+    }
+  }, [searchParams])
 
   const pebMessage = `Bonjour,
 
