@@ -48,7 +48,6 @@ function MobileHomePage({ onIntroComplete, showNavbar, skipIntro }) {
       <main>
         <Hero onIntroComplete={onIntroComplete} skipIntro={skipIntro} />
       </main>
-      <Footer />
     </>
   )
 }
