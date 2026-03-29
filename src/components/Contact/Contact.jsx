@@ -2,8 +2,10 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import styles from './Contact.module.css'
+import useIsMobile from '../../hooks/useIsMobile'
 
 const Contact = () => {
+  const isMobile = useIsMobile()
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -139,6 +141,143 @@ Cordialement,`
     setIsSubmitting(false)
   }
 
+  const formFields = (
+    <>
+      <div className={styles.row}>
+        <div className={styles.field}>
+          <label htmlFor="lastName" className={styles.fieldLabel}>Nom</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            value={formData.lastName}
+            onChange={handleChange}
+            required
+            className={styles.input}
+            placeholder="Votre nom"
+          />
+        </div>
+        <div className={styles.field}>
+          <label htmlFor="firstName" className={styles.fieldLabel}>Prénom</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
+            required
+            className={styles.input}
+            placeholder="Votre prénom"
+          />
+        </div>
+      </div>
+
+      <div className={styles.field}>
+        <label htmlFor="email" className={styles.fieldLabel}>Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          className={styles.input}
+          placeholder="votre@email.com"
+        />
+      </div>
+
+      <div className={styles.field}>
+        <label htmlFor="subject" className={styles.fieldLabel}>Objet</label>
+        <select
+          id="subject"
+          name="subject"
+          value={formData.subject}
+          onChange={handleChange}
+          required
+          className={`${styles.select} ${formData.subject === '' ? styles.selectPlaceholder : ''}`}
+        >
+          {subjectOptions.map((option) => (
+            <option key={option.value} value={option.value} disabled={option.value === ''}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className={styles.field}>
+        <label htmlFor="message" className={styles.fieldLabel}>Message</label>
+        <textarea
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          className={styles.textarea}
+          placeholder="Décrivez votre projet..."
+          rows="5"
+        />
+      </div>
+
+      {submitStatus === 'success' && (
+        <p className={styles.successMessage}>
+          Message envoyé avec succès ! Je vous recontacterai rapidement.
+        </p>
+      )}
+
+      {submitStatus === 'error' && (
+        <p className={styles.errorMessage}>
+          Une erreur est survenue. Veuillez réessayer ou me contacter directement par email.
+        </p>
+      )}
+
+      <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
+        {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
+      </button>
+    </>
+  )
+
+  if (isMobile) {
+    return (
+      <section className={styles.contact} id="contact">
+        <div className="container">
+          <div className={styles.mobileHeader}>
+            <span className={styles.label}>Prendre contact</span>
+            <h2 className={styles.title}>Discutons de votre projet</h2>
+          </div>
+          <form className={styles.formMobile} onSubmit={handleSubmit}>
+            {formFields}
+          </form>
+          <div className={styles.mobileInfo}>
+            <p className={styles.description}>
+              Vous avez un projet de construction, de rénovation/transformation, de régularisation ou besoin d'une certification PEB ?
+              <br />
+              Contactez-moi pour en discuter.
+            </p>
+            <p className={styles.noEngagement}>Premier contact sans engagement</p>
+            <div className={styles.info}>
+              <div className={styles.infoItem}>
+                <span className={styles.infoLabel}>Email</span>
+                <a href="mailto:contact@quarto-architecture.be" className={styles.infoLink}>
+                  contact@quarto-architecture.be
+                </a>
+              </div>
+              <div className={styles.infoItem}>
+                <span className={styles.infoLabel}>Téléphone</span>
+                <a href="tel:+32499337403" className={styles.infoLink}>
+                  +32 499 33 74 03
+                </a>
+              </div>
+              <div className={styles.infoItem}>
+                <span className={styles.infoLabel}>Adresse</span>
+                <span className={styles.infoLink}>Rue de Loncin 58, 4460 Grâce-Hollogne</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section className={styles.contact} id="contact">
       <div className="container">
@@ -196,96 +335,7 @@ Cordialement,`
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className={styles.row}>
-              <div className={styles.field}>
-                <label htmlFor="lastName" className={styles.fieldLabel}>Nom</label>
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  required
-                  className={styles.input}
-                  placeholder="Votre nom"
-                />
-              </div>
-              <div className={styles.field}>
-                <label htmlFor="firstName" className={styles.fieldLabel}>Prénom</label>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  required
-                  className={styles.input}
-                  placeholder="Votre prénom"
-                />
-              </div>
-            </div>
-
-            <div className={styles.field}>
-              <label htmlFor="email" className={styles.fieldLabel}>Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className={styles.input}
-                placeholder="votre@email.com"
-              />
-            </div>
-
-            <div className={styles.field}>
-              <label htmlFor="subject" className={styles.fieldLabel}>Objet</label>
-              <select
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                className={`${styles.select} ${formData.subject === '' ? styles.selectPlaceholder : ''}`}
-              >
-                {subjectOptions.map((option) => (
-                  <option key={option.value} value={option.value} disabled={option.value === ''}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className={styles.field}>
-              <label htmlFor="message" className={styles.fieldLabel}>Message</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                className={styles.textarea}
-                placeholder="Décrivez votre projet..."
-                rows="6"
-              />
-            </div>
-
-            {submitStatus === 'success' && (
-              <p className={styles.successMessage}>
-                Message envoyé avec succès ! Je vous recontacterai rapidement.
-              </p>
-            )}
-
-            {submitStatus === 'error' && (
-              <p className={styles.errorMessage}>
-                Une erreur est survenue. Veuillez réessayer ou me contacter directement par email.
-              </p>
-            )}
-
-            <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
-              {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
-            </button>
+            {formFields}
           </motion.form>
         </div>
       </div>

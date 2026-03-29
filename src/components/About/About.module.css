@@ -65,6 +65,27 @@
   color: var(--gray-dark);
 }
 
+/* Mobile layout */
+.mobileLayout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.imageWrapperMobile {
+  width: 70%;
+  max-width: 280px;
+  overflow: hidden;
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.imageWrapperMobile .image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Responsive */
 @media (max-width: 968px) {
   .grid {

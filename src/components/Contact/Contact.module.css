@@ -203,14 +203,88 @@
   }
 }
 
+/* Mobile-specific */
+.mobileHeader {
+  margin-bottom: var(--spacing-md);
+}
+
+.mobileHeader .label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gray);
+  margin-bottom: var(--spacing-sm);
+}
+
+.mobileHeader .title {
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.formMobile {
+  background: var(--white);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.formMobile .input,
+.formMobile .textarea,
+.formMobile .select {
+  padding: 10px 12px;
+  font-size: 0.9rem;
+}
+
+.formMobile .textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.formMobile .row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.formMobile .row .field {
+  margin-bottom: var(--spacing-md);
+}
+
+.formMobile .field {
+  margin-bottom: var(--spacing-sm);
+}
+
+.formMobile .fieldLabel {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+  margin-bottom: 6px;
+}
+
+.formMobile .submitButton {
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition);
+}
+
+.mobileInfo {
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--cream-dark);
+}
+
 @media (max-width: 768px) {
   .contact {
     padding: var(--spacing-md) 0;
-  }
-
-  .form {
-    order: -1;
-    padding: var(--spacing-md);
   }
 
   .row {
@@ -220,9 +294,5 @@
 
   .row .field {
     margin-bottom: var(--spacing-md);
-  }
-
-  .textarea {
-    min-height: 220px;
   }
 }

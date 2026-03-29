@@ -264,6 +264,7 @@
 
 @media (max-width: 768px) {
   .mobileHeroImage {
+    display: block;
     margin-bottom: var(--spacing-md);
   }
 
