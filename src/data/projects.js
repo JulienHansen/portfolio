@@ -1,8 +1,8 @@
-import shiva1 from '../assets/Shiva/1.jpeg'
+import shiva1 from '../assets/Shiva/1.jpg'
 import shiva2 from '../assets/Shiva/2.jpeg'
 import shiva3 from '../assets/Shiva/3.jpg'
 import shiva4 from '../assets/Shiva/4.jpeg'
-import shiva5 from '../assets/Shiva/5.jpeg'
+import shiva5 from '../assets/Shiva/5.jpg'
 import shiva7 from '../assets/Shiva/7.jpg'
 
 import strataverde1 from '../assets/strataverde/1.jpeg'
