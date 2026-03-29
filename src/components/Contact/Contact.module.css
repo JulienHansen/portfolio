@@ -204,6 +204,15 @@
 }
 
 @media (max-width: 768px) {
+  .contact {
+    padding: var(--spacing-md) 0;
+  }
+
+  .form {
+    order: -1;
+    padding: var(--spacing-md);
+  }
+
   .row {
     grid-template-columns: 1fr;
     gap: 0;
@@ -213,7 +222,7 @@
     margin-bottom: var(--spacing-md);
   }
 
-  .form {
-    padding: var(--spacing-md);
+  .textarea {
+    min-height: 220px;
   }
 }

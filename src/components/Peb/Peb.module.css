@@ -290,6 +290,10 @@
 }
 
 @media (max-width: 768px) {
+  .intro {
+    font-size: 0.9rem;
+  }
+
   .serviceHeader {
     flex-direction: column;
     gap: 4px;

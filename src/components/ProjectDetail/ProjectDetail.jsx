@@ -62,6 +62,17 @@ const ProjectDetail = () => {
         </div>
       </section>
 
+      {/* Hero Image - mobile only, shown before info */}
+      {isMobile && project.images.length > 0 && (
+        <div className={styles.mobileHeroImage}>
+          <img
+            src={project.images[0]}
+            alt={project.title}
+            className={`${styles.image} ${project.slug === 'strataverde' ? styles.imageHighContrast : ''}`}
+          />
+        </div>
+      )}
+
       {/* Main Content - Description + Images side by side */}
       <section className={styles.mainContent}>
         <div className="container">
@@ -153,6 +164,7 @@ const ProjectDetail = () => {
             e.preventDefault()
             if (isMobile) {
               navigate('/contact')
+              window.scrollTo({ top: 0 })
             } else {
               navigate('/')
               setTimeout(() => {

@@ -245,6 +245,11 @@
   transition: color var(--transition);
 }
 
+/* Mobile Hero Image */
+.mobileHeroImage {
+  display: none;
+}
+
 /* Responsive */
 @media (max-width: 968px) {
   .contentGrid {
@@ -258,6 +263,16 @@
 }
 
 @media (max-width: 768px) {
+  .mobileHeroImage {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .mobileHeroImage img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .titleSection {
     padding: var(--spacing-md) 0;
   }
