@@ -17,7 +17,6 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <span className={styles.label}>À propos</span>
-            <h2 className={styles.title}>Kassandra Quarto</h2>
             <div className={styles.imageWrapperMobile}>
               <img
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
@@ -25,6 +24,7 @@ const About = () => {
                 className={styles.image}
               />
             </div>
+            <h2 className={styles.title}>Kassandra Quarto</h2>
             <p className={styles.subtitle}>Ingénieure Civile Architecte</p>
             <div className={styles.bio}>
               <p>

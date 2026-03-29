@@ -6,6 +6,11 @@ import useIsMobile from '../../hooks/useIsMobile'
 
 const Contact = () => {
   const isMobile = useIsMobile()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 })
+  }, [])
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -242,12 +247,12 @@ Cordialement,`
         <div className="container">
           <div className={styles.mobileHeader}>
             <span className={styles.label}>Prendre contact</span>
-            <h2 className={styles.title}>Discutons de votre projet</h2>
           </div>
           <form className={styles.formMobile} onSubmit={handleSubmit}>
             {formFields}
           </form>
           <div className={styles.mobileInfo}>
+            <h2 className={styles.title}>Discutons de votre projet</h2>
             <p className={styles.description}>
               Vous avez un projet de construction, de rénovation/transformation, de régularisation ou besoin d'une certification PEB ?
               <br />

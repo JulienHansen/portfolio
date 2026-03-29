@@ -73,17 +73,30 @@
 }
 
 .imageWrapperMobile {
-  width: 70%;
-  max-width: 280px;
+  width: 100%;
   overflow: hidden;
   margin-top: var(--spacing-sm);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
 }
 
 .imageWrapperMobile .image {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
+}
+
+.mobileLayout .title {
+  font-size: clamp(1.4rem, 5vw, 1.8rem);
+}
+
+.mobileLayout .subtitle {
+  font-size: 0.85rem;
+}
+
+.mobileLayout .bio p {
+  font-size: 0.85rem;
+  line-height: 1.65;
 }
 
 /* Responsive */
