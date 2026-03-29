@@ -89,13 +89,13 @@
   object-fit: cover;
 }
 
-.imageWrapperMobile:hover .image {
+.imageWrapperMobile .imageColor {
   filter: grayscale(0%);
 }
 
 .mobileLayout .title {
   font-size: clamp(1.6rem, 6vw, 2rem);
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 4px;
 }
 

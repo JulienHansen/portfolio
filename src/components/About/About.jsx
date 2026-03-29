@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import styles from './About.module.css'
 import useIsMobile from '../../hooks/useIsMobile'
 
 const About = () => {
   const isMobile = useIsMobile()
+  const [imageColor, setImageColor] = useState(false)
 
   return (
     <section className={styles.about} id="about">
@@ -17,11 +19,14 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <span className={styles.label}>À propos</span>
-            <div className={styles.imageWrapperMobile}>
+            <div
+              className={styles.imageWrapperMobile}
+              onClick={() => setImageColor(!imageColor)}
+            >
               <img
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
                 alt="Portrait"
-                className={styles.image}
+                className={`${styles.image} ${imageColor ? styles.imageColor : ''}`}
               />
             </div>
             <h2 className={styles.title}>Kassandra Quarto</h2>
