@@ -69,14 +69,17 @@
 .mobileLayout {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: 8px;
+}
+
+.mobileLayout .label {
+  margin-bottom: 4px;
 }
 
 .imageWrapperMobile {
   width: 100%;
   overflow: hidden;
-  margin-top: var(--spacing-sm);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 12px;
 }
 
 .imageWrapperMobile .image {
@@ -86,17 +89,28 @@
   object-fit: cover;
 }
 
+.imageWrapperMobile:hover .image {
+  filter: grayscale(0%);
+}
+
 .mobileLayout .title {
-  font-size: clamp(1.4rem, 5vw, 1.8rem);
+  font-size: clamp(1.6rem, 6vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 4px;
 }
 
 .mobileLayout .subtitle {
-  font-size: 0.85rem;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.mobileLayout .bio {
+  gap: 8px;
 }
 
 .mobileLayout .bio p {
   font-size: 0.85rem;
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 /* Responsive */
