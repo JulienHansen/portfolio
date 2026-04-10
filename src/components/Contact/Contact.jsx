@@ -279,7 +279,7 @@ Cordialement,`
 
             {submitStatus === 'error' && (
               <p className={styles.errorMessage}>
-                Une erreur est survenue. Veuillez réessayer ou me contacter directement par email.
+                Une erreur est survenue. Veuillez réessayer ou me contacter directement par téléphone.
               </p>
             )}
 

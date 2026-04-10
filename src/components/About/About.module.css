@@ -24,7 +24,7 @@
 }
 
 .imageWrapper:hover .image {
-  filter: grayscale(50%);
+  filter: grayscale(0%);
 }
 
 .content {

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import styles from './About.module.css'
+import aboutMeImg from '../../assets/about_me.jpg'
 
 const About = () => {
   return (
@@ -13,9 +14,8 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            {/* Remplacez cette URL par votre photo */}
             <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
+              src={aboutMeImg}
               alt="Portrait"
               className={styles.image}
             />
