@@ -36,9 +36,9 @@ const Peb = () => {
 
   const etapesVisite = [
     "Prise de rendez-vous",
-    "Visite du bien (± 1h)",
+    "Visite du bien",
     "Encodage des données",
-    "Envoi du certificat sous 5 jours"
+    "Envoi du certificat"
   ]
 
   const documents = [
@@ -67,6 +67,7 @@ const Peb = () => {
     if (isMobile) {
       const message = `Bonjour,\n\nJe souhaite obtenir un devis pour un certificat PEB.\n\nType de bien : ${serviceTitle}\nAdresse du bien :\nSurface approximative :\n\nCordialement,`
       navigate(`/contact?subject=${encodeURIComponent('Certification PEB')}&message=${encodeURIComponent(message)}`)
+      window.scrollTo({ top: 0 })
     } else {
       const message = `Bonjour,
 

@@ -3,10 +3,12 @@ import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { projects } from '../../data/projects'
 import styles from './ProjectDetail.module.css'
+import useIsMobile from '../../hooks/useIsMobile'
 
 const ProjectDetail = () => {
   const { slug } = useParams()
   const navigate = useNavigate()
+  const isMobile = useIsMobile()
   const project = projects.find(p => p.slug === slug)
 
   // Navigation vers projet suivant/précédent
@@ -59,6 +61,17 @@ const ProjectDetail = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Hero Image - mobile only, shown before info */}
+      {isMobile && project.images.length > 0 && (
+        <div className={styles.mobileHeroImage}>
+          <img
+            src={project.images[0]}
+            alt={project.title}
+            className={`${styles.image} ${project.slug === 'strataverde' ? styles.imageHighContrast : ''}`}
+          />
+        </div>
+      )}
 
       {/* Main Content - Description + Images side by side */}
       <section className={styles.mainContent}>
@@ -145,14 +158,19 @@ const ProjectDetail = () => {
       >
         <p className={styles.ctaText}>Et si le prochain projet était le vôtre ?</p>
         <Link
-          to="/#contact"
+          to={isMobile ? '/contact' : '/#contact'}
           className={styles.ctaButton}
           onClick={(e) => {
             e.preventDefault()
-            navigate('/')
-            setTimeout(() => {
-              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-            }, 100)
+            if (isMobile) {
+              navigate('/contact')
+              window.scrollTo({ top: 0 })
+            } else {
+              navigate('/')
+              setTimeout(() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+              }, 100)
+            }
           }}
         >
           Prendre contact
