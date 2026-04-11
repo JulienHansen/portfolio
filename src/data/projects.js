@@ -11,6 +11,11 @@ import shiva4 from '../assets/Shiva/4.jpeg'
 import shiva5 from '../assets/Shiva/5bis.jpg'
 import shiva7 from '../assets/Shiva/7.jpg'
 
+import naturenville1 from '../assets/nature_en_ville/1.png'
+import naturenville2 from '../assets/nature_en_ville/2.png'
+import naturenville3 from '../assets/nature_en_ville/3.png'
+import naturenville4 from '../assets/nature_en_ville/4.png'
+
 import strataverde1 from '../assets/strataverde/1.jpeg'
 import strataverde2 from '../assets/strataverde/2.png'
 import strataverde3 from '../assets/strataverde/3.png'
@@ -133,24 +138,24 @@ export const projects = [
   },
   {
     id: 6,
-    slug: "maison-jardin",
-    title: "Maison Jardin",
-    location: "Liège, Belgique",
-    year: "2022",
-    category: "Résidentiel",
-    phase: "Réalisé",
-    collaboration: "Antoine Renard",
-    surface: "320 m²",
-    duration: "20 mois",
-    image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&q=80",
+    slug: "nature-en-ville",
+    title: "Nature en Ville",
+    location: "Longdoz, Belgique",
+    year: "2023",
+    category: "Étude",
+    phase: "Étude",
+    collaboration: "Bergdoll Emma - Lamonica Clara - Michau Martin",
+    surface: "13 940 m²",
+    duration: "",
+    image: naturenville1,
     images: [
-      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
+      naturenville1,
+      naturenville2,
+      naturenville3,
+      naturenville4
     ],
-    description: "Une maison bioclimatique où l'architecture et le paysage ne font qu'un. Le jardin pénètre dans la maison à travers des patios intérieurs végétalisés.",
-    challenge: "Concevoir une habitation durable qui minimise son impact environnemental tout en maximisant le confort des occupants à travers les saisons.",
-    solution: "Orientation optimisée, matériaux biosourcés, patios végétalisés pour la régulation thermique naturelle et systèmes passifs de chauffage et rafraîchissement."
+    description: "Nature en Ville requalifie un site urbain dans le Longdoz en tissant espaces verts, logements et équipements sportifs dans une composition cohérente. Mixité des usages et lieux de rencontre y construisent un cadre de vie collectif ancré dans son quartier.",
+    challenge: "Le projet nécessite de répondre à un programme complexe sur un site urbain du quartier du Longdoz à Liège. Il demande de concilier espaces verts, logements et fonctions publiques tout en assurant une cohérence d'ensemble.",
+    solution: "Une analyse préalable du site a permis d'identifier les enjeux et de guider les intentions de projet. Ces réflexions ont mené à un plan masse et à des propositions architecturales intégrant la nature de manière structurée et cohérente."
   }
 ]
