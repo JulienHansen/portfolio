@@ -110,6 +110,11 @@
   color: var(--gray-dark);
 }
 
+.collaboratorLine {
+  display: block;
+  text-align: right;
+}
+
 .description {
   margin-bottom: var(--spacing-lg);
 }

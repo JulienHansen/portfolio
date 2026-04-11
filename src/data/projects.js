@@ -25,7 +25,7 @@ export const projects = [
     year: "2024",
     category: "Étude",
     phase: "Étude",
-    collaboration: "Théo Collignon, Marine Eliard, Thomas Jennen",
+    collaboration: "Collignon Théo, Eliard Marine, Jennen Thomas",
     surface: "38 955 m²",
     duration: "",
     image: tramvitalis1,

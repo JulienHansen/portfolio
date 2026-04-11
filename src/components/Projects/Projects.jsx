@@ -49,7 +49,7 @@ const Projects = () => {
                   <h3 className={styles.projectTitle}>{project.title}</h3>
                   <span className={styles.location}>{project.location}</span>
                   {project.collaboration && (
-                    <span className={styles.collaboration}>En collaboration avec : {project.collaboration}</span>
+                    <span className={styles.collaboration}>En collaboration avec : {project.collaboration.split(', ').join(' – ')}</span>
                   )}
                 </div>
               </Link>

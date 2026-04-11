@@ -104,7 +104,11 @@ const ProjectDetail = () => {
                 {project.collaboration && (
                   <div className={styles.detailItem}>
                     <span className={styles.detailLabel}>Collaboration</span>
-                    <span className={styles.detailValue}>{project.collaboration}</span>
+                    <span className={styles.detailValue}>
+                      {project.collaboration.split(/,\s*|\s*-\s*/).map((name, i) => (
+                        <span key={i} className={styles.collaboratorLine}>{name}</span>
+                      ))}
+                    </span>
                   </div>
                 )}
               </div>
