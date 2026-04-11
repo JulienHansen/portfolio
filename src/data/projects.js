@@ -1,3 +1,9 @@
+import tramvitalis1 from '../assets/TramVitalis/1.png'
+import tramvitalis2 from '../assets/TramVitalis/2.png'
+import tramvitalis3 from '../assets/TramVitalis/3.png'
+import tramvitalis4 from '../assets/TramVitalis/4.png'
+import tramvitalis5 from '../assets/TramVitalis/5.png'
+
 import shiva1 from '../assets/Shiva/1bis.jpg'
 import shiva2 from '../assets/Shiva/2.jpeg'
 import shiva3 from '../assets/Shiva/3.jpg'
@@ -13,25 +19,26 @@ import strataverde4 from '../assets/strataverde/4.png'
 export const projects = [
   {
     id: 1,
-    slug: "maison-lumiere",
-    title: "Maison Lumière",
-    location: "Bruxelles, Belgique",
+    slug: "tramvitalis",
+    title: "TramVitalis",
+    location: "Boncelles, Belgique",
     year: "2024",
-    category: "Résidentiel",
-    phase: "Réalisé",
-    collaboration: "Bureau d'architecture Lejeune Giovanelli",
-    surface: "280 m²",
-    duration: "18 mois",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+    category: "Étude",
+    phase: "Étude",
+    collaboration: "Théo Collignon, Marine Eliard, Thomas Jennen",
+    surface: "38 955 m²",
+    duration: "",
+    image: tramvitalis1,
     images: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=80"
+      tramvitalis1,
+      tramvitalis2,
+      tramvitalis3,
+      tramvitalis4,
+      tramvitalis5
     ],
-    description: "Une maison contemporaine conçue pour maximiser la lumière naturelle tout au long de la journée. L'architecture s'articule autour d'un atrium central qui distribue la lumière dans tous les espaces de vie.",
-    challenge: "Le terrain étroit et orienté nord présentait un défi majeur pour l'apport de lumière naturelle dans les espaces de vie principaux.",
-    solution: "Nous avons créé un puits de lumière central traversant les trois niveaux, complété par des façades vitrées stratégiquement positionnées et des matériaux réfléchissants pour amplifier la luminosité."
+    description: "Tram Vitalis est un projet d'aménagement durable à Boncelles qui associe habitat et nature dans un cadre verdoyant. Il propose 61 logements intégrés autour du RAVeL, avec des espaces publics et partagés favorisant les échanges. L'ensemble vise à offrir un cadre de vie moderne, convivial et apaisé.",
+    challenge: "Le projet devait densifier le site sans altérer son caractère rural ni l'attachement des habitants. Il fallait aussi répondre aux problèmes de sécurité liés au trafic et au manque d'infrastructures. Les contraintes du terrain, entre pente et gestion des eaux, s'ajoutaient à la nécessité de préserver la biodiversité existante.",
+    solution: "La réponse repose sur une densification maîtrisée laissant une large place aux espaces naturels et partagés. Le projet intègre potagers, verger et lieux de rencontre tout en améliorant la mobilité douce et la sécurité. Des choix durables assurent une gestion responsable de l'eau, des matériaux et de l'environnement."
   },
   {
     id: 2,
