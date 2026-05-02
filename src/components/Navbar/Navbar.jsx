@@ -32,7 +32,7 @@ const Navbar = ({ visible = true }) => {
 
     if (location.pathname !== '/') return
 
-    const sections = ['projects', 'peb', 'about', 'contact']
+    const sections = ['projects', /* 'peb', */ 'about' /* , 'contact' */]
 
     const observerOptions = {
       rootMargin: '-30% 0px -50% 0px',
@@ -99,9 +99,9 @@ const Navbar = ({ visible = true }) => {
 
   const navItems = [
     { label: 'Projets', href: '#projects', mobileHref: '/projects' },
-    { label: 'PEB', href: '#peb', mobileHref: '/peb' },
+    // { label: 'PEB', href: '#peb', mobileHref: '/peb' },
     { label: 'À propos', href: '#about', mobileHref: '/about' },
-    { label: 'Prendre contact', href: '#contact', mobileHref: '/contact' }
+    // { label: 'Prendre contact', href: '#contact', mobileHref: '/contact' }
   ]
 
   const isActiveMobile = (item) => location.pathname === item.mobileHref

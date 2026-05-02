@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import Projects from './components/Projects/Projects'
-import Peb from './components/Peb/Peb'
+// import Peb from './components/Peb/Peb'
 import About from './components/About/About'
-import Contact from './components/Contact/Contact'
+// import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import ProjectDetail from './components/ProjectDetail/ProjectDetail'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
@@ -18,9 +18,9 @@ function DesktopHomePage({ onIntroComplete, showNavbar, skipIntro }) {
       <main>
         <Hero onIntroComplete={onIntroComplete} skipIntro={skipIntro} />
         <Projects />
-        <Peb />
+        {/* <Peb /> */}
         <About />
-        <Contact />
+        {/* <Contact /> */}
       </main>
       <Footer />
       <ScrollToTop />
@@ -92,9 +92,9 @@ function App() {
               }
             />
             <Route path="/projects" element={<MobilePage><Projects /></MobilePage>} />
-            <Route path="/peb" element={<MobilePage><Peb /></MobilePage>} />
+            {/* <Route path="/peb" element={<MobilePage><Peb /></MobilePage>} /> */}
             <Route path="/about" element={<MobilePage><About /></MobilePage>} />
-            <Route path="/contact" element={<MobilePage><Contact /></MobilePage>} />
+            {/* <Route path="/contact" element={<MobilePage><Contact /></MobilePage>} /> */}
           </>
         ) : (
           <Route

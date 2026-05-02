@@ -67,28 +67,28 @@ export const projects = [
     challenge: "Transformer un quartier marqué par les inondations et dominé par la voiture en un espace résilient et attractif. Il fallait reconnecter Chênée à l'Ourthe tout en renforçant sa dynamique sociale et urbaine.",
     solution: "Le projet intègre un hall sportif, un restaurant-coworking avec logements et des kots étudiants pour créer une centralité active. Une promenade paysagère structure le site et favorise la continuité écologique. Strata Verde façonne ainsi un quartier plus vert, fluide et vivant."
   },
-  {
-    id: 3,
-    slug: "villa-horizon",
-    title: "Villa Horizon",
-    location: "Knokke, Belgique",
-    year: "2023",
-    category: "Résidentiel",
-    phase: "Réalisé",
-    collaboration: "Marine Lefebvre",
-    surface: "450 m²",
-    duration: "24 mois",
-    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
-    ],
-    description: "Villa de luxe face à la mer avec une architecture horizontale qui s'intègre harmonieusement dans le paysage côtier. Chaque espace offre une vue panoramique sur l'horizon.",
-    challenge: "Créer une résidence de prestige qui dialogue avec son environnement maritime tout en offrant une protection contre les vents côtiers et l'exposition saline.",
-    solution: "L'architecture basse et étendue épouse le terrain naturel, avec des terrasses protégées et des matériaux résistants au climat marin. De grandes baies vitrées cadrent les vues tout en assurant l'isolation."
-  },
+  // {
+  //   id: 3,
+  //   slug: "villa-horizon",
+  //   title: "Villa Horizon",
+  //   location: "Knokke, Belgique",
+  //   year: "2023",
+  //   category: "Résidentiel",
+  //   phase: "Réalisé",
+  //   collaboration: "Marine Lefebvre",
+  //   surface: "450 m²",
+  //   duration: "24 mois",
+  //   image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
+  //   images: [
+  //     "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
+  //     "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+  //     "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
+  //     "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
+  //   ],
+  //   description: "Villa de luxe face à la mer avec une architecture horizontale qui s'intègre harmonieusement dans le paysage côtier. Chaque espace offre une vue panoramique sur l'horizon.",
+  //   challenge: "Créer une résidence de prestige qui dialogue avec son environnement maritime tout en offrant une protection contre les vents côtiers et l'exposition saline.",
+  //   solution: "L'architecture basse et étendue épouse le terrain naturel, avec des terrasses protégées et des matériaux résistants au climat marin. De grandes baies vitrées cadrent les vues tout en assurant l'isolation."
+  // },
   {
     id: 4,
     slug: "Shiva",
@@ -114,28 +114,28 @@ export const projects = [
     challenge: "Comment préserver l'identité industrielle du site tout en lui donnant une nouvelle vie active et attractive pour le quartier.",
     solution: "Le projet conserve les façades industrielles comme mémoire du lieu tout en restructurant l'intérieur pour accueillir de nouveaux programmes culturels et sociaux. L'organisation autour d'un restaurant central, d'un cinéma, de studios et d'espaces extérieurs animés crée un lieu ouvert, dynamique et connecté au quartier."
   },
-  {
-    id: 5,
-    slug: "appartement-terrasse",
-    title: "Appartement Terrasse",
-    location: "Bruxelles, Belgique",
-    year: "2023",
-    category: "Résidentiel",
-    phase: "Étude",
-    collaboration: "Sophie Martin",
-    surface: "180 m²",
-    duration: "8 mois",
-    image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
-    ],
-    description: "Rénovation complète d'un penthouse avec création d'une terrasse panoramique. L'espace intérieur s'ouvre généreusement sur l'extérieur pour une vie dedans-dehors.",
-    challenge: "Transformer un appartement cloisonné en un espace ouvert et lumineux, tout en créant une connexion forte avec la terrasse existante sous-exploitée.",
-    solution: "Suppression des cloisons non porteuses, création de grandes ouvertures coulissantes et aménagement de la terrasse comme une véritable pièce à vivre extérieure avec cuisine d'été."
-  },
+  // {
+  //   id: 5,
+  //   slug: "appartement-terrasse",
+  //   title: "Appartement Terrasse",
+  //   location: "Bruxelles, Belgique",
+  //   year: "2023",
+  //   category: "Résidentiel",
+  //   phase: "Étude",
+  //   collaboration: "Sophie Martin",
+  //   surface: "180 m²",
+  //   duration: "8 mois",
+  //   image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
+  //   images: [
+  //     "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
+  //     "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=80",
+  //     "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=80",
+  //     "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
+  //   ],
+  //   description: "Rénovation complète d'un penthouse avec création d'une terrasse panoramique. L'espace intérieur s'ouvre généreusement sur l'extérieur pour une vie dedans-dehors.",
+  //   challenge: "Transformer un appartement cloisonné en un espace ouvert et lumineux, tout en créant une connexion forte avec la terrasse existante sous-exploitée.",
+  //   solution: "Suppression des cloisons non porteuses, création de grandes ouvertures coulissantes et aménagement de la terrasse comme une véritable pièce à vivre extérieure avec cuisine d'été."
+  // },
   {
     id: 6,
     slug: "nature-en-ville",
