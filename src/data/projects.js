@@ -21,6 +21,19 @@ import strataverde2 from '../assets/strataverde/2.png'
 import strataverde3 from '../assets/strataverde/3.png'
 import strataverde4 from '../assets/strataverde/4.png'
 
+import moulin1 from '../assets/moulin/1.png'
+import moulin2 from '../assets/moulin/2.png'
+import moulin3 from '../assets/moulin/3.png'
+import moulin4 from '../assets/moulin/4.png'
+import moulin5 from '../assets/moulin/5.png'
+import moulin6 from '../assets/moulin/6.png'
+
+import tournesol1 from '../assets/tournesol/1.jpg'
+import tournesol2 from '../assets/tournesol/2.jpg'
+import tournesol3 from '../assets/tournesol/3.jpg'
+import tournesol4 from '../assets/tournesol/4.jpg'
+import tournesol5 from '../assets/tournesol/5.jpeg'
+
 export const projects = [
   {
     id: 1,
@@ -46,49 +59,52 @@ export const projects = [
     solution: "La réponse repose sur une densification maîtrisée laissant une large place aux espaces naturels et partagés. Le projet intègre potagers, verger et lieux de rencontre tout en améliorant la mobilité douce et la sécurité. Des choix durables assurent une gestion responsable de l'eau, des matériaux et de l'environnement."
   },
   {
-    id: 2,
-    slug: "strataverde",
-    title: "StrataVerde",
-    location: "Chênée, Belgique",
-    year: "2025",
-    category: "Étude",
-    phase: "Étude",
-    collaboration: "Eliard Marine - Goffinet Olivier",
-    surface: "50 000 m²",
-    duration: "4 mois",
-    image: strataverde1,
+    id: 5,
+    slug: "moulin",
+    title: "Moulin",
+    location: "Verviers, Belgique",
+    year: "2026",
+    category: "Permis d'urbanisme",
+    phase: "",
+    collaboration: "Bureau d'architecture Lejeune Giovanelli",
+    surface: "2 100 m²",
+    duration: "",
+    image: moulin1,
     images: [
-      strataverde1,
-      strataverde2,
-      strataverde3,
-      strataverde4
+      moulin1,
+      moulin2,
+      moulin3,
+      moulin4,
+      moulin5,
+      moulin6
     ],
-    description: "Suite aux inondations de 2021, le projet requalifie Chênée en replaçant l'Ourthe au centre et en créant un corridor écologique structurant.",
-    challenge: "Transformer un quartier marqué par les inondations et dominé par la voiture en un espace résilient et attractif. Il fallait reconnecter Chênée à l'Ourthe tout en renforçant sa dynamique sociale et urbaine.",
-    solution: "Le projet intègre un hall sportif, un restaurant-coworking avec logements et des kots étudiants pour créer une centralité active. Une promenade paysagère structure le site et favorise la continuité écologique. Strata Verde façonne ainsi un quartier plus vert, fluide et vivant."
+    description: "Moulin est un projet de transformation d'un ancien bâtiment de stockage et d'un ancien moulin en un ensemble mixte accueillant 15 logements et 2 surfaces commerciales. L'intervention s'accompagne d'un espace paysager qui enveloppe le bâtiment et réinscrit le site dans son environnement naturel.",
+    challenge: "Le projet devait composer avec l'existant en préservant le cachet du lieu tout en lui apportant une écriture contemporaine. Il fallait aussi répondre aux contraintes du site, notamment l'organisation des espaces de stationnement et la gestion d'un dénivelé important à l'arrière du bâtiment.",
+    solution: "La réponse repose sur une densification maîtrisée d'un site en voie de déconstruction, où le patrimoine bâti retrouve un usage tout en accueillant un programme tourné vers la nature. Le dialogue entre matériaux d'origine et interventions contemporaines structure l'ensemble, prolongé par un aménagement paysager qui relie logements, commerces et espaces extérieurs."
   },
-  // {
-  //   id: 3,
-  //   slug: "villa-horizon",
-  //   title: "Villa Horizon",
-  //   location: "Knokke, Belgique",
-  //   year: "2023",
-  //   category: "Résidentiel",
-  //   phase: "Réalisé",
-  //   collaboration: "Marine Lefebvre",
-  //   surface: "450 m²",
-  //   duration: "24 mois",
-  //   image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-  //   images: [
-  //     "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-  //     "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-  //     "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-  //     "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
-  //   ],
-  //   description: "Villa de luxe face à la mer avec une architecture horizontale qui s'intègre harmonieusement dans le paysage côtier. Chaque espace offre une vue panoramique sur l'horizon.",
-  //   challenge: "Créer une résidence de prestige qui dialogue avec son environnement maritime tout en offrant une protection contre les vents côtiers et l'exposition saline.",
-  //   solution: "L'architecture basse et étendue épouse le terrain naturel, avec des terrasses protégées et des matériaux résistants au climat marin. De grandes baies vitrées cadrent les vues tout en assurant l'isolation."
-  // },
+  {
+    id: 3,
+    slug: "maison-medicale-tournesol",
+    title: "Maison Médicale Tournesol",
+    location: "Flémalle, Belgique",
+    year: "2024-2026",
+    category: "Chantier",
+    phase: "",
+    collaboration: "Bureau d'architecture Lejeune Giovanelli",
+    surface: "≈ 200 m²",
+    duration: "",
+    image: tournesol5,
+    images: [
+      tournesol1,
+      tournesol2,
+      tournesol3,
+      tournesol4,
+      tournesol5
+    ],
+    description: "La Maison Médicale Tournesol consiste en la rénovation du bâtiment principal ainsi qu'en la construction d'une extension dédiée à l'activité médicale. Mon intervention s'est principalement concentrée sur la phase de suivi de chantier, en accompagnant la mise en œuvre du projet sur site.",
+    challenge: "Conduire un chantier qui combine rénovation d'un bâti existant et construction neuve implique de coordonner différents corps de métier tout en composant avec les contraintes du lieu. Il faut assurer la qualité d'exécution, le respect du planning et la cohérence entre les interventions successives.",
+    solution: "Le suivi régulier du chantier permet d'anticiper les points de friction et de garantir la bonne mise en œuvre des choix techniques et architecturaux. À ce jour, la maçonnerie est achevée et les châssis viennent d'être posés ; les prochaines étapes concernent la pose des enduits et l'aménagement intérieur du bâtiment."
+  },
   {
     id: 4,
     slug: "Shiva",
@@ -114,28 +130,28 @@ export const projects = [
     challenge: "Comment préserver l'identité industrielle du site tout en lui donnant une nouvelle vie active et attractive pour le quartier.",
     solution: "Le projet conserve les façades industrielles comme mémoire du lieu tout en restructurant l'intérieur pour accueillir de nouveaux programmes culturels et sociaux. L'organisation autour d'un restaurant central, d'un cinéma, de studios et d'espaces extérieurs animés crée un lieu ouvert, dynamique et connecté au quartier."
   },
-  // {
-  //   id: 5,
-  //   slug: "appartement-terrasse",
-  //   title: "Appartement Terrasse",
-  //   location: "Bruxelles, Belgique",
-  //   year: "2023",
-  //   category: "Résidentiel",
-  //   phase: "Étude",
-  //   collaboration: "Sophie Martin",
-  //   surface: "180 m²",
-  //   duration: "8 mois",
-  //   image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
-  //   images: [
-  //     "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
-  //     "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=80",
-  //     "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=80",
-  //     "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
-  //   ],
-  //   description: "Rénovation complète d'un penthouse avec création d'une terrasse panoramique. L'espace intérieur s'ouvre généreusement sur l'extérieur pour une vie dedans-dehors.",
-  //   challenge: "Transformer un appartement cloisonné en un espace ouvert et lumineux, tout en créant une connexion forte avec la terrasse existante sous-exploitée.",
-  //   solution: "Suppression des cloisons non porteuses, création de grandes ouvertures coulissantes et aménagement de la terrasse comme une véritable pièce à vivre extérieure avec cuisine d'été."
-  // },
+  {
+    id: 2,
+    slug: "strataverde",
+    title: "StrataVerde",
+    location: "Chênée, Belgique",
+    year: "2025",
+    category: "Étude",
+    phase: "Étude",
+    collaboration: "Eliard Marine - Goffinet Olivier",
+    surface: "50 000 m²",
+    duration: "4 mois",
+    image: strataverde1,
+    images: [
+      strataverde1,
+      strataverde2,
+      strataverde3,
+      strataverde4
+    ],
+    description: "Suite aux inondations de 2021, le projet requalifie Chênée en replaçant l'Ourthe au centre et en créant un corridor écologique structurant.",
+    challenge: "Transformer un quartier marqué par les inondations et dominé par la voiture en un espace résilient et attractif. Il fallait reconnecter Chênée à l'Ourthe tout en renforçant sa dynamique sociale et urbaine.",
+    solution: "Le projet intègre un hall sportif, un restaurant-coworking avec logements et des kots étudiants pour créer une centralité active. Une promenade paysagère structure le site et favorise la continuité écologique. Strata Verde façonne ainsi un quartier plus vert, fluide et vivant."
+  },
   {
     id: 6,
     slug: "nature-en-ville",

@@ -22,10 +22,15 @@ const ProjectDetail = () => {
 
   const handleBackToProjects = (e) => {
     e.preventDefault()
-    navigate('/')
-    setTimeout(() => {
-      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
-    }, 100)
+    if (isMobile) {
+      navigate('/projects')
+      window.scrollTo({ top: 0 })
+    } else {
+      navigate('/')
+      setTimeout(() => {
+        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    }
   }
 
   if (!project) {
@@ -42,7 +47,7 @@ const ProjectDetail = () => {
       {/* Header with back link */}
       <header className={styles.header}>
         <div className="container">
-          <a href="/#projects" onClick={handleBackToProjects} className={styles.backLink}>
+          <a href={isMobile ? '/projects' : '/#projects'} onClick={handleBackToProjects} className={styles.backLink}>
             ← Retour aux projets
           </a>
         </div>
@@ -57,7 +62,7 @@ const ProjectDetail = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className={styles.title}>{project.title}</h1>
-            <span className={styles.status}>{project.phase}</span>
+            <span className={styles.status}>{project.phase || project.category}</span>
           </motion.div>
         </div>
       </section>
