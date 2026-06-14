@@ -6,6 +6,7 @@ import logo from '../../assets/logo.png'
 
 const Navbar = ({ visible = true }) => {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('')
   const location = useLocation()
   const navigate = useNavigate()
@@ -73,6 +74,7 @@ const Navbar = ({ visible = true }) => {
 
   const handleNavClick = (e, item) => {
     e.preventDefault()
+    setIsMobileMenuOpen(false)
 
     const sectionId = item.href.replace('#', '')
     if (location.pathname === '/') {
@@ -121,6 +123,36 @@ const Navbar = ({ visible = true }) => {
             </li>
           ))}
         </ul>
+
+        <button
+          className={`${styles.mobileMenuBtn} ${isMobileMenuOpen ? styles.active : ''}`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.open : ''}`}>
+          <ul>
+            {navItems.map((item, index) => (
+              <motion.li
+                key={item.label}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isMobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <a
+                  href={item.href}
+                  className={isActiveDesktop(item) ? styles.mobileActive : ''}
+                  onClick={(e) => handleNavClick(e, item)}
+                >
+                  {item.label}
+                </a>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
       </div>
     </motion.nav>
   )
