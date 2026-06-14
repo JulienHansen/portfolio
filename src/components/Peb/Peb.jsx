@@ -1,12 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { useNavigate } from 'react-router-dom'
 import styles from './Peb.module.css'
 import useIsMobile from '../../hooks/useIsMobile'
 
 const Peb = () => {
   const isMobile = useIsMobile()
-  const navigate = useNavigate()
   const carouselRef = useRef(null)
   const [activeCard, setActiveCard] = useState(0)
 
@@ -64,25 +62,13 @@ const Peb = () => {
   }, [isMobile, services.length])
 
   const handleDevisClick = (serviceTitle) => {
-    if (isMobile) {
-      const message = `Bonjour,\n\nJe souhaite obtenir un devis pour un certificat PEB.\n\nType de bien : ${serviceTitle}\nAdresse du bien :\nSurface approximative :\n\nCordialement,`
-      navigate(`/contact?subject=${encodeURIComponent('Certification PEB')}&message=${encodeURIComponent(message)}`)
-      window.scrollTo({ top: 0 })
-    } else {
-      const message = `Bonjour,
-
-Je souhaite obtenir un devis pour un certificat PEB.
-
-Type de bien :
-Adresse du bien :
-Surface approximative :
-
-Cordialement,`
-      window.dispatchEvent(new CustomEvent('prefillContactForm', {
-        detail: { message, subject: 'Certification PEB' }
-      }))
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })
-    }
+    const message = serviceTitle
+      ? `Bonjour,\n\nJe souhaite obtenir un devis pour un certificat PEB.\n\nType de bien : ${serviceTitle}\nAdresse du bien :\nSurface approximative :\n\nCordialement,`
+      : `Bonjour,\n\nJe souhaite obtenir un devis pour un certificat PEB.\n\nType de bien :\nAdresse du bien :\nSurface approximative :\n\nCordialement,`
+    window.dispatchEvent(new CustomEvent('prefillContactForm', {
+      detail: { message, subject: 'Certification PEB' }
+    }))
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (

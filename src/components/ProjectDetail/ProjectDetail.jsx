@@ -22,15 +22,10 @@ const ProjectDetail = () => {
 
   const handleBackToProjects = (e) => {
     e.preventDefault()
-    if (isMobile) {
-      navigate('/projects')
-      window.scrollTo({ top: 0 })
-    } else {
-      navigate('/')
-      setTimeout(() => {
-        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
-      }, 100)
-    }
+    navigate('/')
+    setTimeout(() => {
+      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
   }
 
   if (!project) {
@@ -47,7 +42,7 @@ const ProjectDetail = () => {
       {/* Header with back link */}
       <header className={styles.header}>
         <div className="container">
-          <a href={isMobile ? '/projects' : '/#projects'} onClick={handleBackToProjects} className={styles.backLink}>
+          <a href="/#projects" onClick={handleBackToProjects} className={styles.backLink}>
             ← Retour aux projets
           </a>
         </div>
@@ -167,19 +162,14 @@ const ProjectDetail = () => {
       >
         <p className={styles.ctaText}>Et si le prochain projet était le vôtre ?</p>
         <Link
-          to={isMobile ? '/contact' : '/#contact'}
+          to="/#contact"
           className={styles.ctaButton}
           onClick={(e) => {
             e.preventDefault()
-            if (isMobile) {
-              navigate('/contact')
-              window.scrollTo({ top: 0 })
-            } else {
-              navigate('/')
-              setTimeout(() => {
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-              }, 100)
-            }
+            navigate('/')
+            setTimeout(() => {
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+            }, 100)
           }}
         >
           Prendre contact
