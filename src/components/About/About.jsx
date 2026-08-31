@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import styles from './About.module.css'
-import aboutMeImg from '../../assets/about_me.jpg'
+import aboutMeImg from '../../assets/about_me.webp'
 import useIsMobile from '../../hooks/useIsMobile'
 
 const About = () => {
