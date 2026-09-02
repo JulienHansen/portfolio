@@ -85,10 +85,12 @@ const ProjectDetail = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <div className={styles.details}>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Lieu</span>
-                  <span className={styles.detailValue}>{project.location}</span>
-                </div>
+                {project.location && (
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Lieu</span>
+                    <span className={styles.detailValue}>{project.location}</span>
+                  </div>
+                )}
                 <div className={styles.detailItem}>
                   <span className={styles.detailLabel}>Surface</span>
                   <span className={styles.detailValue}>{project.surface}</span>
@@ -113,24 +115,52 @@ const ProjectDetail = () => {
                 )}
               </div>
 
-              <div className={styles.description}>
-                <p>{project.description}</p>
-              </div>
+              {project.description && (
+                <div className={styles.description}>
+                  <p>{project.description}</p>
+                </div>
+              )}
 
-              <div className={styles.challengeSolution}>
-                <div className={styles.textBlock}>
-                  <h3>Le défi</h3>
-                  <p>{project.challenge}</p>
+              {(project.challenge || project.solution) && (
+                <div className={styles.challengeSolution}>
+                  {project.challenge && (
+                    <div className={styles.textBlock}>
+                      <h3>Le défi</h3>
+                      <p>{project.challenge}</p>
+                    </div>
+                  )}
+                  {project.solution && (
+                    <div className={styles.textBlock}>
+                      <h3>La solution</h3>
+                      <p>{project.solution}</p>
+                    </div>
+                  )}
                 </div>
-                <div className={styles.textBlock}>
-                  <h3>La solution</h3>
-                  <p>{project.solution}</p>
-                </div>
-              </div>
+              )}
             </motion.div>
 
             {/* Right - Images */}
             <div className={styles.imagesColumn}>
+              {project.video && (
+                <motion.div
+                  className={styles.imageWrapper}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <video
+                    className={styles.image}
+                    src={project.video}
+                    poster={project.images[0]}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  />
+                </motion.div>
+              )}
               {project.images.map((image, index) => (
                 <motion.div
                   key={index}

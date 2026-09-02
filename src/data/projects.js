@@ -28,6 +28,18 @@ import moulin4 from '../assets/Moulin/4.webp'
 import moulin5 from '../assets/Moulin/5.webp'
 import moulin6 from '../assets/Moulin/6.webp'
 
+import berloz1 from '../assets/berloz/1.webp'
+import berloz2 from '../assets/berloz/2.webp'
+import berloz3 from '../assets/berloz/3.webp'
+import berloz4 from '../assets/berloz/4.webp'
+import berloz5 from '../assets/berloz/5.webp'
+import berlozVideo from '../assets/berloz/video.mp4'
+
+import flaneur1 from '../assets/residence_flaneur/1.webp'
+import flaneur2 from '../assets/residence_flaneur/2.webp'
+import flaneur3 from '../assets/residence_flaneur/3.webp'
+import flaneurVideo from '../assets/residence_flaneur/video.mp4'
+
 import tournesol1 from '../assets/Tournesol/1.webp'
 import tournesol2 from '../assets/Tournesol/2.webp'
 import tournesol3 from '../assets/Tournesol/3.webp'
@@ -88,13 +100,36 @@ export const projects = [
     solution: "La réponse repose sur une densification maîtrisée d'un site en voie de déconstruction, où le patrimoine bâti retrouve un usage tout en accueillant un programme tourné vers la nature. Le dialogue entre matériaux d'origine et interventions contemporaines structure l'ensemble, prolongé par un aménagement paysager qui relie logements, commerces et espaces extérieurs."
   },
   {
+    id: 8,
+    slug: "residence-flaneur",
+    title: "Résidence Flâneur",
+    location: "Verviers, Belgique",
+    year: "2026",
+    category: "Avant-projet",
+    tags: ["Logement", STAR_TAG],
+    phase: "Avant-projet",
+    collaboration: "Bureau d'architecture Lejeune Giovanelli",
+    surface: "700 m²",
+    duration: "",
+    image: flaneur1,
+    video: flaneurVideo,
+    images: [
+      flaneur1,
+      flaneur2,
+      flaneur3
+    ],
+    description: "La Résidence Flâneur est un projet de construction neuve implanté sur la même parcelle que le projet Moulin. Le bâtiment accueille une vingtaine de logements ainsi qu'un atelier de réparation de vélos et une brasserie au rez-de-chaussée. Traversé par la balade vélo des Flâneurs, le projet s'inscrit dans un site déjà marqué par les usages et les qualités paysagères du lieu.",
+    challenge: "Le principal enjeu du projet était de parvenir à créer un nombre suffisant de logements tout en intégrant les besoins en stationnement liés à la proximité du centre-ville, sur une parcelle particulièrement contrainte. Le bâtiment devait également préserver la balade vélo des Flâneurs qui traverse le site, tout en trouvant sa juste place face au voisinage et notamment au projet Moulin. La densité devait ainsi être maîtrisée : construire davantage sans occuper davantage le sol, sans créer d'ombres importantes sur les bâtiments voisins et sans donner au nouveau volume une présence trop imposante dans son environnement.",
+    solution: "La réponse consiste à privilégier une implantation en hauteur afin de limiter l'emprise au sol. Le volume est travaillé pour préserver les vues et la lumière des bâtiments alentour, tout en restant proportionné au contexte. Le rez-de-chaussée accueille la brasserie et l'atelier vélo, créant un lien direct avec la balade des Flâneurs."
+  },
+  {
     id: 3,
     slug: "maison-medicale-tournesol",
     title: "Maison Médicale Tournesol",
     location: "Flémalle, Belgique",
     year: "2024-2026",
     category: "Chantier",
-    tags: ["Rénovation", "Extension", STAR_TAG],
+    tags: ["Rénovation", "Extension"],
     phase: "",
     collaboration: "Bureau d'architecture Lejeune Giovanelli",
     surface: "≈ 200 m²",
@@ -182,5 +217,30 @@ export const projects = [
     description: "Nature en Ville requalifie un site urbain dans le Longdoz en tissant espaces verts, logements et équipements sportifs dans une composition cohérente. Mixité des usages et lieux de rencontre y construisent un cadre de vie collectif ancré dans son quartier.",
     challenge: "Le projet nécessite de répondre à un programme complexe sur un site urbain du quartier du Longdoz à Liège. Il demande de concilier espaces verts, logements et fonctions publiques tout en assurant une cohérence d'ensemble.",
     solution: "Une analyse préalable du site a permis d'identifier les enjeux et de guider les intentions de projet. Ces réflexions ont mené à un plan masse et à des propositions architecturales intégrant la nature de manière structurée et cohérente."
+  },
+  {
+    id: 7,
+    slug: "berloz",
+    title: "Berloz",
+    location: "Berloz, Belgique",
+    year: "2026",
+    category: "Étude",
+    tags: ["Quartier durable", "Logement"],
+    phase: "Étude",
+    collaboration: "Bureau d'architecture Lejeune Giovanelli",
+    surface: "23 000 m²",
+    duration: "",
+    image: berloz1,
+    video: berlozVideo,
+    images: [
+      berloz1,
+      berloz2,
+      berloz3,
+      berloz4,
+      berloz5
+    ],
+    description: "Le projet de Berloz prend place sur une parcelle vierge et propose un nouveau quartier composé de 15 maisons et de 4 immeubles accueillant chacun 4 appartements. Le projet cherche à urbaniser le site tout en proposant des logements de qualité et accessibles, complétés par 4 espaces de professions libérales ou commerces au rez-de-chaussée des immeubles.",
+    challenge: "Urbaniser une parcelle complexe, difficilement accessible et directement bordée par les habitations existantes, tout en prenant en compte un axe naturel de ruissellement traversant le site. Le projet devait également s'intégrer aux équipements du quartier et répondre à leurs besoins.",
+    solution: "L'accès au nouveau quartier est créé depuis la ferme existante afin de faciliter son intégration au tissu environnant. Une végétation haute est introduite en limite de parcelle pour créer une transition avec les voisins, tandis qu'un étang permet de gérer naturellement les eaux de ruissellement. Le projet est complété par une plaine de jeux pouvant bénéficier à l'école voisine ainsi qu'un parking de 50 places destiné à la salle des fêtes."
   }
 ]
