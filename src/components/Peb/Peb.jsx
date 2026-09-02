@@ -253,30 +253,6 @@ const Peb = () => {
             ))}
             <p className={styles.priceNote}>* Tous les prix sont TVAC, déplacement compris</p>
 
-            <div className={styles.mobileSection}>
-              <h3 className={styles.sectionTitle}>Comment se déroule la visite ?</h3>
-              <ol className={styles.etapesList}>
-                {etapesVisite.map((etape, index) => (
-                  <li key={etape} className={styles.etapeItem}>
-                    <span className={styles.etapeNumber}>{index + 1}</span>
-                    {etape}
-                  </li>
-                ))}
-              </ol>
-            </div>
-
-            <div className={styles.mobileSection}>
-              <h3 className={styles.sectionTitle}>Documents à préparer</h3>
-              <ul className={styles.documentsList}>
-                {documents.map((doc) => (
-                  <li key={doc} className={styles.documentItem}>
-                    <span className={styles.checkmark}>✓</span>
-                    {doc}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
             <div className={styles.cta}>
               <p>Besoin d'un certificat PEB ?</p>
               <button

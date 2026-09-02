@@ -300,10 +300,6 @@
   background: var(--black);
 }
 
-.mobileSection {
-  margin-bottom: var(--spacing-lg);
-}
-
 /* Desktop Responsive */
 @media (max-width: 968px) {
   .header {
@@ -334,6 +330,14 @@
 
   .pebLogo {
     display: none;
+  }
+
+  .peb {
+    padding-bottom: var(--spacing-md);
+  }
+
+  .cta {
+    padding: var(--spacing-md);
   }
 
   .serviceHeader {
