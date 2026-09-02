@@ -1,9 +1,29 @@
+import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { projects } from '../../data/projects'
+import { projects, STAR_TAG } from '../../data/projects'
 import styles from './Projects.module.css'
 
+const STAR_LIMIT = 6
+
 const Projects = () => {
+  const [activeTag, setActiveTag] = useState(STAR_TAG)
+
+  const tags = useMemo(() => {
+    const others = new Set()
+    projects.forEach((project) => {
+      project.tags?.forEach((tag) => {
+        if (tag !== STAR_TAG) others.add(tag)
+      })
+    })
+    return [STAR_TAG, ...others]
+  }, [])
+
+  const visibleProjects = useMemo(() => {
+    const filtered = projects.filter((project) => project.tags?.includes(activeTag))
+    return activeTag === STAR_TAG ? filtered.slice(0, STAR_LIMIT) : filtered
+  }, [activeTag])
+
   return (
     <section className={styles.projects} id="projects">
       <div className="container">
@@ -18,15 +38,37 @@ const Projects = () => {
           <h2 className={styles.title}>Réalisations</h2>
         </motion.div>
 
+        <motion.div
+          className={styles.filters}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <span className={styles.filterLabel}>Filtrer par</span>
+          <div className={styles.filterList}>
+            {tags.map((tag) => (
+              <button
+                key={tag}
+                type="button"
+                className={`${styles.filterButton} ${tag === activeTag ? styles.filterButtonActive : ''}`}
+                onClick={() => setActiveTag(tag)}
+                aria-pressed={tag === activeTag}
+              >
+                {tag === STAR_TAG ? `${tag} ♥` : tag}
+              </button>
+            ))}
+          </div>
+        </motion.div>
+
         <div className={styles.grid}>
-          {projects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <motion.article
               key={project.id}
               className={styles.item}
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.08 }}
             >
               <Link to={`/projet/${project.slug}`} className={styles.link}>
                 <div className={styles.imageWrapper}>

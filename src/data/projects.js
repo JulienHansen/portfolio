@@ -34,6 +34,9 @@ import tournesol3 from '../assets/Tournesol/3.webp'
 import tournesol4 from '../assets/Tournesol/4.webp'
 import tournesol5 from '../assets/Tournesol/5.webp'
 
+// Tag affiché par défaut dans la section Réalisations (les 6 projets mis en avant)
+export const STAR_TAG = "Sélection"
+
 export const projects = [
   {
     id: 1,
@@ -42,6 +45,7 @@ export const projects = [
     location: "Boncelles, Belgique",
     year: "2024",
     category: "Étude",
+    tags: ["Logement", "Quartier durable", STAR_TAG],
     phase: "Étude",
     collaboration: "Collignon Théo, Eliard Marine, Jennen Thomas",
     surface: "38 955 m²",
@@ -65,6 +69,7 @@ export const projects = [
     location: "Verviers, Belgique",
     year: "2026",
     category: "Permis d'urbanisme",
+    tags: ["Rénovation", "Logement", STAR_TAG],
     phase: "",
     collaboration: "Bureau d'architecture Lejeune Giovanelli",
     surface: "2 100 m²",
@@ -89,6 +94,7 @@ export const projects = [
     location: "Flémalle, Belgique",
     year: "2024-2026",
     category: "Chantier",
+    tags: ["Rénovation", "Extension", STAR_TAG],
     phase: "",
     collaboration: "Bureau d'architecture Lejeune Giovanelli",
     surface: "≈ 200 m²",
@@ -112,6 +118,7 @@ export const projects = [
     location: "Seraing, Belgique",
     year: "2024",
     category: "Étude",
+    tags: ["Rénovation", "Bâtiment public", STAR_TAG],
     phase: "Étude",
     collaboration: "Eliard Marine - Goffinet Olivier",
     surface: "11 627 m²",
@@ -137,6 +144,7 @@ export const projects = [
     location: "Chênée, Belgique",
     year: "2025",
     category: "Étude",
+    tags: ["Quartier durable", "Bâtiment public", STAR_TAG],
     phase: "Étude",
     collaboration: "Eliard Marine - Goffinet Olivier",
     surface: "50 000 m²",
@@ -159,6 +167,7 @@ export const projects = [
     location: "Longdoz, Belgique",
     year: "2023",
     category: "Étude",
+    tags: ["Quartier durable", "Logement", "Bâtiment public", STAR_TAG],
     phase: "Étude",
     collaboration: "Bergdoll Emma - Lamonica Clara - Michau Martin",
     surface: "13 940 m²",

@@ -274,7 +274,7 @@ Cordialement,`
               </div>
               <div className={styles.infoItem}>
                 <span className={styles.infoLabel}>Adresse</span>
-                <span className={styles.infoLink}>Rue de Loncin 58, 4460 Grâce-Hollogne</span>
+                <span className={styles.infoLink}>Rue Piron 22, 4420 Saint-Nicolas</span>
               </div>
             </div>
           </div>
@@ -326,7 +326,7 @@ Cordialement,`
                     document.getElementById('map')?.scrollIntoView({ behavior: 'smooth' })
                   }}
                 >
-                  Rue de Loncin 58, 4460 Grâce-Hollogne
+                  Rue Piron 22, 4420 Saint-Nicolas
                 </a>
               </div>
             </div>

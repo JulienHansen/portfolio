@@ -95,7 +95,7 @@ const Hero = ({ onIntroComplete, skipIntro }) => {
                 }}
                 transition={{ duration: .75, delay: phase === 'intro' ? 0.4 : 0 }}
               >
-                Certification PEB • Ingénieur Architecte • Design
+                Certification PEB • Ingénieure Civile Architecte
               </motion.p>
             </motion.div>
           </motion.div>
@@ -135,7 +135,7 @@ const Hero = ({ onIntroComplete, skipIntro }) => {
         }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
-        Certification PEB • Ingénieur Architecte • Design
+        Certification PEB • Ingénieure Civile Architecte
       </motion.p>
 
       <motion.div

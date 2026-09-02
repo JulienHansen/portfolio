@@ -40,12 +40,12 @@ const Footer = () => {
       {/* Google Maps Section */}
       <div id="map" className={styles.mapSection}>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2531.5!2d5.4897!3d50.6397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0de2d5e5c1a1d%3A0x0!2sRue+de+Loncin+58%2C+4460+Gr%C3%A2ce-Hollogne!5e0!3m2!1sfr!2sbe!4v1"
+          src="https://www.google.com/maps?q=Rue%20Piron%2022%2C%204420%20Saint-Nicolas%2C%20Belgique&hl=fr&z=16&output=embed"
           className={styles.map}
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Localisation Quarto Architecture - Rue de Loncin 58, 4460 Grâce-Hollogne"
+          title="Localisation Quarto Architecture - Rue Piron 22, 4420 Saint-Nicolas"
         />
       </div>
 
