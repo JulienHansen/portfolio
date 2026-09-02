@@ -125,6 +125,13 @@ const PebLogo = () => (
   </svg>
 )
 
+const ServicePrice = ({ price }) => (
+  <span className={styles.servicePrice}>
+    {price}
+    {price.includes('€') && <sup className={styles.priceAsterisk}>*</sup>}
+  </span>
+)
+
 const PriceCarousel = ({ group, onDevisClick }) => {
   const carouselRef = useRef(null)
   const [activeCard, setActiveCard] = useState(0)
@@ -155,7 +162,7 @@ const PriceCarousel = ({ group, onDevisClick }) => {
               onClick={() => onDevisClick(item)}
             >
               <h4 className={styles.serviceTitle}>{item.title}</h4>
-              <span className={styles.servicePrice}>{item.price}</span>
+              <ServicePrice price={item.price} />
               <p className={styles.serviceDescription}>{item.description}</p>
               <span className={styles.cardCta}>Demander un devis →</span>
             </button>
@@ -308,7 +315,7 @@ const Peb = () => {
                       >
                         <div className={styles.serviceHeader}>
                           <h4 className={styles.serviceTitle}>{item.title}</h4>
-                          <span className={styles.servicePrice}>{item.price}</span>
+                          <ServicePrice price={item.price} />
                         </div>
                         <p className={styles.serviceDescription}>{item.description}</p>
                         <span className={styles.cardCta}>Demander un devis →</span>

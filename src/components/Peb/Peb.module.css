@@ -128,6 +128,13 @@
   line-height: 1.6;
 }
 
+.priceAsterisk {
+  font-size: 0.7em;
+  font-weight: 400;
+  color: var(--gray);
+  margin-left: 1px;
+}
+
 .priceNote {
   font-size: 0.75rem;
   color: var(--gray);
@@ -323,6 +330,10 @@
 @media (max-width: 768px) {
   .intro {
     font-size: 0.9rem;
+  }
+
+  .pebLogo {
+    display: none;
   }
 
   .serviceHeader {
