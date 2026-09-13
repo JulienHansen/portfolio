@@ -16,12 +16,7 @@ const Contact = () => {
     lastName: '',
     email: '',
     subject: '',
-    message: '',
-    // Champ piège : masqué aux visiteurs, rempli par les robots à spam.
-    // Nom volontairement opaque : « website » ou « url » déclenchent la
-    // saisie automatique des navigateurs, qui fait passer de vrais
-    // visiteurs pour des robots.
-    _hp: ''
+    message: ''
   })
   const [searchParams] = useSearchParams()
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -129,14 +124,13 @@ Cordialement,`
           name: `${formData.firstName} ${formData.lastName}`.trim(),
           email: formData.email,
           subject: formData.subject,
-          message: formData.message,
-          _hp: formData._hp
+          message: formData.message
         })
       })
 
       if (response.ok) {
         setSubmitStatus('success')
-        setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '', _hp: '' })
+        setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' })
       } else {
         setSubmitStatus('error')
       }
@@ -149,16 +143,6 @@ Cordialement,`
 
   const formFields = (
     <>
-      <input
-        type="text"
-        name="_hp"
-        value={formData._hp}
-        onChange={handleChange}
-        tabIndex={-1}
-        autoComplete="off"
-        aria-hidden="true"
-        style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
-      />
       <div className={styles.row}>
         <div className={styles.field}>
           <label htmlFor="lastName" className={styles.fieldLabel}>Nom</label>
