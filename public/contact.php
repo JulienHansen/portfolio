@@ -30,7 +30,10 @@ if (!is_array($donnees)) {
 }
 
 // Champ piege : invisible pour un humain, souvent rempli par les robots.
-if (!empty($donnees['website'])) {
+// Le nom est volontairement opaque pour echapper a la saisie automatique
+// des navigateurs, qui remplissait l'ancien champ « website » et faisait
+// passer de vrais visiteurs pour des robots.
+if (!empty($donnees['_hp'])) {
     repondre(200, 'Message envoye.');
 }
 

@@ -18,7 +18,10 @@ const Contact = () => {
     subject: '',
     message: '',
     // Champ piège : masqué aux visiteurs, rempli par les robots à spam.
-    website: ''
+    // Nom volontairement opaque : « website » ou « url » déclenchent la
+    // saisie automatique des navigateurs, qui fait passer de vrais
+    // visiteurs pour des robots.
+    _hp: ''
   })
   const [searchParams] = useSearchParams()
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -127,13 +130,13 @@ Cordialement,`
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          website: formData.website
+          _hp: formData._hp
         })
       })
 
       if (response.ok) {
         setSubmitStatus('success')
-        setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '', website: '' })
+        setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '', _hp: '' })
       } else {
         setSubmitStatus('error')
       }
@@ -148,8 +151,8 @@ Cordialement,`
     <>
       <input
         type="text"
-        name="website"
-        value={formData.website}
+        name="_hp"
+        value={formData._hp}
         onChange={handleChange}
         tabIndex={-1}
         autoComplete="off"
