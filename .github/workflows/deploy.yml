@@ -34,7 +34,9 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
+          # L'offre hosting-free-100m ne supporte ni FTPS (AUTH TLS refuse)
+          # ni SFTP (pas de SSH). Le FTP simple est la seule option ici.
+          protocol: ftp
           port: 21
           local-dir: ./dist/
           server-dir: ./www/
