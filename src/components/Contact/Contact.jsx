@@ -16,7 +16,9 @@ const Contact = () => {
     lastName: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    // Champ piège : masqué aux visiteurs, rempli par les robots à spam.
+    website: ''
   })
   const [searchParams] = useSearchParams()
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -114,28 +116,24 @@ Cordialement,`
     setIsSubmitting(true)
     setSubmitStatus(null)
 
-    // Remplacez YOUR_FORM_ID par votre ID Formspree
-    // Créez un compte gratuit sur https://formspree.io et créez un formulaire
-    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'
-
     try {
-      const response = await fetch(FORMSPREE_ENDPOINT, {
+      const response = await fetch('/contact.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          name: `${formData.firstName} ${formData.lastName}`,
+          name: `${formData.firstName} ${formData.lastName}`.trim(),
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          _subject: `[Quarto Architecture] ${formData.subject}`
+          website: formData.website
         })
       })
 
       if (response.ok) {
         setSubmitStatus('success')
-        setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' })
+        setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '', website: '' })
       } else {
         setSubmitStatus('error')
       }
@@ -148,6 +146,16 @@ Cordialement,`
 
   const formFields = (
     <>
+      <input
+        type="text"
+        name="website"
+        value={formData.website}
+        onChange={handleChange}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
+      />
       <div className={styles.row}>
         <div className={styles.field}>
           <label htmlFor="lastName" className={styles.fieldLabel}>Nom</label>
