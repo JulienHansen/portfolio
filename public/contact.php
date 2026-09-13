@@ -63,11 +63,12 @@ $corps = "Nouveau message depuis le site quarto-architecture.be\n\n"
     . "Date    : " . date('d/m/Y H:i') . "\n\n"
     . "Message :\n{$message}\n";
 
-// L'expediteur reste une adresse du domaine pour respecter SPF ; l'adresse
-// du visiteur passe en Reply-To pour pouvoir lui repondre directement.
+// Pas de Reply-To vers l'adresse du visiteur : un « repondre a » pointant
+// vers une messagerie grand public differente de l'expediteur est un motif
+// d'usurpation classique, et le filtre d'OVH rejetait silencieusement ces
+// messages. L'adresse du visiteur figure dans le corps du mail.
 $entetes = [
     'From: Site Quarto Architecture <' . EXPEDITEUR . '>',
-    'Reply-To: ' . $nom . ' <' . $email . '>',
     'Content-Type: text/plain; charset=UTF-8',
     'MIME-Version: 1.0',
 ];
