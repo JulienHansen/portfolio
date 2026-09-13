@@ -174,6 +174,8 @@ const ProjectDetail = () => {
                     src={image}
                     alt={`${project.title} - ${index + 1}`}
                     className={`${styles.image} ${project.slug === 'strataverde' ? styles.imageHighContrast : ''} ${project.blendImages?.includes(index) ? styles.imageBlend : ''}`}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </motion.div>
               ))}

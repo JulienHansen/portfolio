@@ -76,6 +76,8 @@ const Projects = () => {
                     src={project.image}
                     alt={project.title}
                     className={styles.image}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
                   />
                   <div className={styles.overlay}>
                     <span className={styles.viewText}>Voir le projet</span>
